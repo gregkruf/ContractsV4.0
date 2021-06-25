@@ -14,6 +14,7 @@ namespace ContractsV4._0
 {
     public partial class SelectForm : Form
     {
+        private SqlConnection sqlConnection = null;
         public SelectForm()
         {
             InitializeComponent();
@@ -22,35 +23,37 @@ namespace ContractsV4._0
         private async void SelectForm_Load(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["ContractsV4"].ConnectionString;
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection = new SqlConnection(connectionString);
+
             await sqlConnection.OpenAsync();
             if (sqlConnection.State == ConnectionState.Open)
-                connnectionLabel.Visible = true;
+                toolStripLabel1.Visible = true;
+                //connnectionLabel.Visible = true;
         
-            listView1.GridLines = true;
-            listView1.FullRowSelect = true;
-            listView1.View = View.Details;
+            lViewSelect.GridLines = true;
+            lViewSelect.FullRowSelect = true;
+            lViewSelect.View = View.Details;
     
-            listView1.Columns.Add("Номер в базе");
-            listView1.Columns.Add("Номер");
-            listView1.Columns.Add("Сумма");
-            listView1.Columns.Add("Дата");
-            listView1.Columns.Add("Платеж");
-            listView1.Columns.Add("Дата платежа");
-            listView1.Columns.Add("Поставщик");
-            listView1.Columns.Add("КВР");
-            listView1.Columns.Add("44ФЗ");
-            listView1.Columns.Add("Дата начала");
-            listView1.Columns.Add("Дата окончания");
-            listView1.Columns.Add("Комментарий");
+            lViewSelect.Columns.Add("Номер в базе");
+            lViewSelect.Columns.Add("Номер");
+            lViewSelect.Columns.Add("Сумма");
+            lViewSelect.Columns.Add("Дата");
+            lViewSelect.Columns.Add("Платеж");
+            lViewSelect.Columns.Add("Дата платежа");
+            lViewSelect.Columns.Add("Поставщик");
+            lViewSelect.Columns.Add("КВР");
+            lViewSelect.Columns.Add("44ФЗ");
+            lViewSelect.Columns.Add("Дата начала");
+            lViewSelect.Columns.Add("Дата окончания");
+            lViewSelect.Columns.Add("Комментарий");
 
-            await LoadContractsAsync(sqlConnection);
+            await LoadContractsAsync();
 
             if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
                 sqlConnection.Close();
         }
 
-        private async Task LoadContractsAsync(SqlConnection sqlConnection) // Select
+        private async Task LoadContractsAsync() // Select
         {
             SqlDataReader sqlReader = null;
             SqlCommand commands = new SqlCommand("Select * from [Contracts]", sqlConnection);
@@ -66,18 +69,18 @@ namespace ContractsV4._0
                         Convert.ToString(sqlReader["Id"]),
                         Convert.ToString(sqlReader["numContracts"]),
                         Convert.ToString(sqlReader["sumContracts"]),
-                        Convert.ToString(sqlReader["dateContracts"]),
+                        Convert.ToString(Convert.ToDateTime(sqlReader["dateContracts"]).ToShortDateString()),
                         Convert.ToString(sqlReader["paymentContracts"]),
-                        Convert.ToString(sqlReader["paymentDateContracts"]),
+                        Convert.ToString(Convert.ToDateTime(sqlReader["paymentDateContracts"]).ToShortDateString()),
                         Convert.ToString(sqlReader["partnerContracts"]),
                         Convert.ToString(sqlReader["codeKVRContracts"]),
                         Convert.ToString(sqlReader["pointFZ44Contracts"]),
-                        Convert.ToString(sqlReader["dateStartContracts"]),
-                        Convert.ToString(sqlReader["dateFinishContracts"]),
+                        Convert.ToString(Convert.ToDateTime(sqlReader["dateStartContracts"]).ToShortDateString()),
+                        Convert.ToString(Convert.ToDateTime(sqlReader["dateFinishContracts"]).ToShortDateString()),
                         Convert.ToString(sqlReader["noticeContracts"]),
 
                     });
-                    listView1.Items.Add(item);
+                    lViewSelect.Items.Add(item);
                     
                 }
             }
@@ -99,8 +102,26 @@ namespace ContractsV4._0
 
         private void SelectForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
-              //  sqlConnection.Close();
+            if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
+                sqlConnection.Close();
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void F5button_Click(object sender, EventArgs e)
+        {
+            if (sqlConnection.State != ConnectionState.Open)
+                toolStripLabel1.Visible = true;
+            //await sqlConnection.OpenAsync();
+            //await LoadContractsAsync();
         }
     }
 }

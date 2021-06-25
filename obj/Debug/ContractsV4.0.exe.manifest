@@ -42,24 +42,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ContractsV4.0.exe" size="30656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ContractsV4.0.exe" size="37824">
       <assemblyIdentity name="ContractsV4.0" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DfAAmX1m2w+vul+isrT/26ztykBEijUaq7JlxeygGR4=</dsig:DigestValue>
+        <dsig:DigestValue>fKD55QEjz8zjxSH+jRqcZ8C4pyzezbzIUt4R0wzB0YE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="ContractsV4.0.exe.config" size="483">
+  <file name="ContractsV4.0.exe.config" size="495">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>+mdEuZSkFZeUKuXMgtkrVQjnpmYQkZ+GynBCprQ24yE=</dsig:DigestValue>
+      <dsig:DigestValue>UEmRHv7xhIvAHTOvy8R4UYVPdeod7Dw81IGuk89KIOU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ContractsV4.mdf" size="3211264" writeableType="applicationData">
@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>LXrXqfCzMbZ0lo+JfpSj8Nv/U6CGcGMADOGZulk993E=</dsig:DigestValue>
+      <dsig:DigestValue>O0+NlTbdbk0B4Z06hda96MyezgcJ1COSOMCmn24uiuQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ContractsV4_log.ldf" size="851968" writeableType="applicationData">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iMSS8eNWgH8zQCUe9rwRSFRYzRRnkOlGq7qubhE7F5c=</dsig:DigestValue>
+      <dsig:DigestValue>gineyTBbc+869gO1ABkuGyG8s8ugUywf4YryQmWxagk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Database1.mdf" size="2162688" writeableType="applicationData">
