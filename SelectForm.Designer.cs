@@ -69,7 +69,7 @@ namespace ContractsV4._0
             this.lViewSelect.HideSelection = false;
             this.lViewSelect.Location = new System.Drawing.Point(0, 49);
             this.lViewSelect.Name = "lViewSelect";
-            this.lViewSelect.Size = new System.Drawing.Size(847, 288);
+            this.lViewSelect.Size = new System.Drawing.Size(691, 288);
             this.lViewSelect.TabIndex = 29;
             this.lViewSelect.UseCompatibleStateImageBehavior = false;
             this.lViewSelect.View = System.Windows.Forms.View.Tile;
@@ -82,7 +82,7 @@ namespace ContractsV4._0
             this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(847, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(691, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,13 +98,13 @@ namespace ContractsV4._0
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             // 
             // правкаToolStripMenuItem
@@ -118,7 +118,7 @@ namespace ContractsV4._0
             // обновитьToolStripMenuItem
             // 
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.обновитьToolStripMenuItem.Text = "Обновить";
             // 
             // оПрограммеToolStripMenuItem
@@ -137,7 +137,7 @@ namespace ContractsV4._0
             this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(847, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(691, 25);
             this.toolStrip1.TabIndex = 31;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -160,6 +160,7 @@ namespace ContractsV4._0
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(59, 22);
             this.toolStripButton2.Text = "Вставить";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -192,7 +193,7 @@ namespace ContractsV4._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 337);
+            this.ClientSize = new System.Drawing.Size(691, 337);
             this.Controls.Add(this.lViewSelect);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);

@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
 
+
 namespace ContractsV4._0
 {
     public partial class SelectForm : Form
@@ -28,14 +29,13 @@ namespace ContractsV4._0
             await sqlConnection.OpenAsync();
             if (sqlConnection.State == ConnectionState.Open)
                 toolStripLabel1.Visible = true;
-                //connnectionLabel.Visible = true;
         
             lViewSelect.GridLines = true;
             lViewSelect.FullRowSelect = true;
             lViewSelect.View = View.Details;
-    
-            lViewSelect.Columns.Add("Номер в базе");
-            lViewSelect.Columns.Add("Номер");
+
+            lViewSelect.Columns.Add("Id в базе");
+            lViewSelect.Columns.Add("Номер контракта");
             lViewSelect.Columns.Add("Сумма");
             lViewSelect.Columns.Add("Дата");
             lViewSelect.Columns.Add("Платеж");
@@ -49,18 +49,16 @@ namespace ContractsV4._0
 
             await LoadContractsAsync();
 
-            if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
-                sqlConnection.Close();
         }
 
         private async Task LoadContractsAsync() // Select
         {
             SqlDataReader sqlReader = null;
-            SqlCommand commands = new SqlCommand("Select * from [Contracts]", sqlConnection);
+            SqlCommand selectCommands = new SqlCommand("Select * from [Contracts]", sqlConnection);
 
             try
             {
-                sqlReader = await commands.ExecuteReaderAsync();
+                sqlReader = await selectCommands.ExecuteReaderAsync();
 
                 while (await sqlReader.ReadAsync())
                 {
@@ -116,12 +114,16 @@ namespace ContractsV4._0
 
         }
 
-        private void F5button_Click(object sender, EventArgs e)
+        private async void F5button_Click(object sender, EventArgs e)
         {
-            if (sqlConnection.State != ConnectionState.Open)
-                toolStripLabel1.Visible = true;
-            //await sqlConnection.OpenAsync();
-            //await LoadContractsAsync();
+            lViewSelect.Items.Clear();
+            await LoadContractsAsync();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            InsertForm insertForm = new InsertForm(sqlConnection);
+            insertForm.Show();
         }
     }
 }

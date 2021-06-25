@@ -9,49 +9,48 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace ContractsV4._0
 {
-    public partial class Form1 : Form
+    public partial class InsertForm : Form
     {
         private SqlConnection sqlConnection = null;
 
-        public Form1()
+        public InsertForm(SqlConnection connection)
         {
             InitializeComponent();
+            sqlConnection = connection;
         }
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["ContractsV4"].ConnectionString);
-            await sqlConnection.OpenAsync();
             if (sqlConnection.State == ConnectionState.Open)
                 connnectionLabel.Visible = true;
-
-
         }
 
-        private void butInsertContracts_Click(object sender, EventArgs e)
+        private async void butInsertContracts_Click(object sender, EventArgs e)
         {
 
             SqlCommand command = new SqlCommand("INSERT INTO Contracts (numContracts, sumContracts, dateContracts, " + 
             "paymentContracts, partnerContracts, paymentDateContracts, codeKVRContracts, " + 
-            "pointFZ44Contracts, dateStartContracts, dateFinishContracts, noticeContracts) " + 
+            "pointFZ44Contracts, dateStartContracts, dateFinishContracts, noticeContracts) " +
             "VALUES (@numContracts, @sumContracts, @dateContracts, " + 
             "@paymentContracts, @partnerContracts, @paymentDateContracts, @codeKVRContracts, " +
             "@pointFZ44Contracts, @dateStartContracts, @dateFinishContracts, @noticeContracts)", sqlConnection);
-            SqlCommand command2 = new SqlCommand("Insert into Contracts (numContracts, sumContracts, dateContracts) VALUES (@numContracts, @sumContracts, @dateContracts)", sqlConnection);
 
+            try
+            {// здесь ошибка с преобразованием суммы в дабл
             string allowedchar = ",0123456789";
 
-            if (!(tboxPaymentContr.Text.ToString().Contains(allowedchar)) || 
-                tboxSumContr.Text.ToString().Contains(allowedchar))
+            if ((tboxPaymentContr.Text.ToString().Contains(allowedchar)) ||
+                (tboxSumContr.Text.ToString().Contains(allowedchar)))
             {
                 labelContractAdded.Text = "Контракт не добавлен";
                 labelContractAdded.Show();
-                labelErrorSumContr.Text = "Заменить точку на запятую";
+                labelErrorSumContr.Text = "Неккоректный ввод";
                 labelErrorSumContr.Show();
-                labelErrorSumPaym.Text = "Заменить точку на запятую";
+                labelErrorSumPaym.Text = "Неккоректный ввод";
                 labelErrorSumPaym.Show();
             }
             else
@@ -67,26 +66,37 @@ namespace ContractsV4._0
                 command.Parameters.AddWithValue("@dateStartContracts", Convert.ToDateTime(pickerDateStartContr.Value));
                 command.Parameters.AddWithValue("@dateFinishContracts", Convert.ToDateTime(pickerDateFinishContr.Value));
                 command.Parameters.AddWithValue("@noticeContracts", tboxNoticeContr.Text);
-                command.ExecuteNonQuery();
-                labelContractAdded.Text = "Контракт добавлен!";
+                labelContractAdded.Visible = true;
                 labelErrorSumPaym.Hide();
                 labelErrorSumContr.Hide();
-                //System.Threading.Thread.Sleep(500);
-            }
-            //command2.ExecuteNonQuery();
-            //System.Threading.Thread.Sleep(1000);
             
+                await command.ExecuteNonQueryAsync();
+
+            }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Thread.Sleep(1000);
+
+                
+            }
+                Close();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SelectForm sf = new SelectForm();
-            sf.ShowDialog();
-        }
     }
+
+
+
+   
+    
 }
