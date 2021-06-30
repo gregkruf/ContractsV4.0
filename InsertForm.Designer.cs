@@ -318,6 +318,7 @@
             this.tboxPaymentContr.Name = "tboxPaymentContr";
             this.tboxPaymentContr.Size = new System.Drawing.Size(100, 20);
             this.tboxPaymentContr.TabIndex = 5;
+            this.tboxPaymentContr.TextChanged += new System.EventHandler(this.tboxPaymentContr_TextChanged);
             // 
             // tboxPartnerContr
             // 
@@ -332,6 +333,7 @@
             this.tboxSumContr.Name = "tboxSumContr";
             this.tboxSumContr.Size = new System.Drawing.Size(100, 20);
             this.tboxSumContr.TabIndex = 2;
+            this.tboxSumContr.TextChanged += new System.EventHandler(this.tboxSumContr_TextChanged);
             // 
             // tboxNumContr
             // 

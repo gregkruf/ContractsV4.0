@@ -93,6 +93,42 @@ namespace ContractsV4._0
         {
 
         }
+
+        private void tboxSumContr_TextChanged(object sender, EventArgs e)
+        {
+            bool flag = true;
+            string str = tboxSumContr.Text; //"1sd21,436(&^*^ff,2 a,2,b2";
+            string result = null;
+            foreach (char each in str)
+            {
+                if (Char.IsDigit(each))
+                    result += each;
+                if (each == ',' && flag)
+                {
+                    flag = false;
+                    result += each;
+                }
+            }
+            tboxSumContr.Text = result;
+        }
+
+        private void tboxPaymentContr_TextChanged(object sender, EventArgs e)
+        {
+            bool flag = true;
+            string str = tboxPaymentContr.Text; //"1sd21,436(&^*^ff,2 a,2,b2";
+            string result = null;
+            foreach (char each in str)
+            {
+                if (Char.IsDigit(each))
+                    result += each;
+                if (each == ',' && flag)
+                {
+                    flag = false;
+                    result += each;
+                }
+            }
+            tboxPaymentContr.Text = result;
+        }
     }
 
 

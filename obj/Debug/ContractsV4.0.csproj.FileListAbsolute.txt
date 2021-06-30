@@ -13,7 +13,7 @@ D:\Sangrinik\ContractsV4.0\ContractsV4.0\bin\Debug\ContractsV4.0.exe.manifest
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\bin\Debug\ContractsV4.0.application
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4.0.exe.manifest
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4.0.application
-D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4.0.csproj.CoreCompileInputs.cache
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4._0.SelectForm.resources
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4._0.InsertForm.resources
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4._0.UpdateForm.resources
+D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4.0.csproj.CoreCompileInputs.cache
