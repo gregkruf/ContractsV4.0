@@ -73,6 +73,7 @@ namespace ContractsV4._0
             this.lViewSelect.TabIndex = 29;
             this.lViewSelect.UseCompatibleStateImageBehavior = false;
             this.lViewSelect.View = System.Windows.Forms.View.Tile;
+            this.lViewSelect.SelectedIndexChanged += new System.EventHandler(this.lViewSelect_SelectedIndexChanged);
             // 
             // menuStrip1
             // 

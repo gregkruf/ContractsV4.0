@@ -59,28 +59,53 @@ namespace ContractsV4._0
             try
             {
                 sqlReader = await selectCommands.ExecuteReaderAsync();
+                double sumAllContr = 0;
+                double sumAllPayContr = 0;
 
                 while (await sqlReader.ReadAsync())
-                {
-                    ListViewItem item = new ListViewItem(new string[]
+                {                                                       // заполнение данными из строки БД в ListView
+                    ListViewItem item = new ListViewItem(new string[] 
                     {
-                        Convert.ToString(sqlReader["Id"]),
-                        Convert.ToString(sqlReader["numContracts"]),
-                        Convert.ToString(sqlReader["sumContracts"]),
-                        Convert.ToString(Convert.ToDateTime(sqlReader["dateContracts"]).ToShortDateString()),
-                        Convert.ToString(sqlReader["paymentContracts"]),
-                        Convert.ToString(Convert.ToDateTime(sqlReader["paymentDateContracts"]).ToShortDateString()),
-                        Convert.ToString(sqlReader["partnerContracts"]),
-                        Convert.ToString(sqlReader["codeKVRContracts"]),
-                        Convert.ToString(sqlReader["pointFZ44Contracts"]),
-                        Convert.ToString(Convert.ToDateTime(sqlReader["dateStartContracts"]).ToShortDateString()),
-                        Convert.ToString(Convert.ToDateTime(sqlReader["dateFinishContracts"]).ToShortDateString()),
-                        Convert.ToString(sqlReader["noticeContracts"]),
+                            Convert.ToString(sqlReader["Id"]),
+                            Convert.ToString(sqlReader["numContracts"]),
+                            Convert.ToString(sqlReader["sumContracts"]),
+                            Convert.ToString(sqlReader["dateContracts"]),
+                            Convert.ToString(sqlReader["paymentContracts"]),
+                            Convert.ToString(sqlReader["paymentDateContracts"]),
+                            Convert.ToString(sqlReader["partnerContracts"]),
+                            Convert.ToString(sqlReader["codeKVRContracts"]),
+                            Convert.ToString(sqlReader["pointFZ44Contracts"]),
+                            Convert.ToString(sqlReader["dateStartContracts"]), 
+                            Convert.ToString(sqlReader["dateFinishContracts"]),
+                            Convert.ToString(sqlReader["noticeContracts"]),
 
                     });
+
+                    if (item.SubItems[3].Text != "" )  //Дата контракта, обрезается время и выводит в LIstView
+                       item.SubItems[3].Text = ((Convert.ToDateTime(item.SubItems[3].Text)).ToShortDateString()).ToString();
+
+                    if (item.SubItems[5].Text != "")//Дата платежа по контракту, обрезается время и выводит в LIstView
+                        item.SubItems[5].Text = ((Convert.ToDateTime(item.SubItems[5].Text)).ToShortDateString()).ToString();
+
+                    if (item.SubItems[9].Text != "")//Дата начала действия контракта, обрезается время и выводит в LIstView
+                        item.SubItems[9].Text = ((Convert.ToDateTime(item.SubItems[9].Text)).ToShortDateString()).ToString();
+
+                    if (item.SubItems[10].Text != "")//Дата завершения контракта, обрезается время и выводит в LIstView
+                        item.SubItems[10].Text = ((Convert.ToDateTime(item.SubItems[10].Text)).ToShortDateString()).ToString();
+
+                    if (item.SubItems[2].Text != "")
+                        sumAllContr += Convert.ToDouble(item.SubItems[2].Text); // Суммирую все суммы по кнтрактам
+                    if (item.SubItems[4].Text != "")
+                        sumAllPayContr += Convert.ToDouble(item.SubItems[4].Text);
+
                     lViewSelect.Items.Add(item);
+                    //MessageBox.Show(sumAllContr.ToString());
                     
                 }
+                ListViewItem sum = new ListViewItem(new string[] { "", "", sumAllContr.ToString(), "", sumAllPayContr.ToString() });
+                lViewSelect.Items.Add(sum);
+
+
             }
             catch (Exception ex)
             {
@@ -124,6 +149,11 @@ namespace ContractsV4._0
         {
             InsertForm insertForm = new InsertForm(sqlConnection);
             insertForm.Show();
+        }
+
+        private void lViewSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

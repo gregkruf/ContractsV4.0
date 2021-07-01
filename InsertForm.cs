@@ -40,21 +40,8 @@ namespace ContractsV4._0
             "@pointFZ44Contracts, @dateStartContracts, @dateFinishContracts, @noticeContracts)", sqlConnection);
 
             try
-            {// здесь ошибка с преобразованием суммы в дабл
-            string allowedchar = ",0123456789";
+            { 
 
-            if ((tboxPaymentContr.Text.ToString().Contains(allowedchar)) ||
-                (tboxSumContr.Text.ToString().Contains(allowedchar)))
-            {
-                labelContractAdded.Text = "Контракт не добавлен";
-                labelContractAdded.Show();
-                labelErrorSumContr.Text = "Неккоректный ввод";
-                labelErrorSumContr.Show();
-                labelErrorSumPaym.Text = "Неккоректный ввод";
-                labelErrorSumPaym.Show();
-            }
-            else
-            {
                 command.Parameters.AddWithValue("@numContracts", tboxNumContr.Text);
                 command.Parameters.AddWithValue("@sumContracts", Convert.ToDouble(tboxSumContr.Text));
                 command.Parameters.AddWithValue("@dateContracts", Convert.ToDateTime(pickerDateContr.Value));
@@ -67,13 +54,8 @@ namespace ContractsV4._0
                 command.Parameters.AddWithValue("@dateFinishContracts", Convert.ToDateTime(pickerDateFinishContr.Value));
                 command.Parameters.AddWithValue("@noticeContracts", tboxNoticeContr.Text);
                 labelContractAdded.Visible = true;
-                labelErrorSumPaym.Hide();
-                labelErrorSumContr.Hide();
-            
+
                 await command.ExecuteNonQueryAsync();
-
-            }
-
 
             }
             catch (Exception ex)
@@ -82,7 +64,7 @@ namespace ContractsV4._0
             }
             finally
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
 
                 
             }
@@ -97,7 +79,7 @@ namespace ContractsV4._0
         private void tboxSumContr_TextChanged(object sender, EventArgs e)
         {
             bool flag = true;
-            string str = tboxSumContr.Text; //"1sd21,436(&^*^ff,2 a,2,b2";
+            string str = tboxSumContr.Text;          //"1sd21,436(&^*^ff,2 a,2,b2";
             string result = null;
             foreach (char each in str)
             {
