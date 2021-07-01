@@ -109,7 +109,11 @@ namespace ContractsV4._0
                     result += each;
                 }
             }
-            tboxSumContr.Text = result;
+            if (result != null)
+            {
+                tboxSumContr.Text = result;
+                tboxSumContr.SelectionStart = result.Length;
+            }
         }
 
         private void tboxPaymentContr_TextChanged(object sender, EventArgs e)
@@ -127,7 +131,13 @@ namespace ContractsV4._0
                     result += each;
                 }
             }
-            tboxPaymentContr.Text = result;
+            if (result != null)
+            { 
+                tboxPaymentContr.Text = result;
+                tboxPaymentContr.SelectionStart = result.Length; 
+            }
+
+
         }
     }
 
