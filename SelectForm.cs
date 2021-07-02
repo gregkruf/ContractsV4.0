@@ -30,7 +30,7 @@ namespace ContractsV4._0
             if (sqlConnection.State == ConnectionState.Open)
                 toolStripLabel1.Visible = true;
         
-            lViewSelect.GridLines = true;
+            lViewSelect.GridLines = true; // создаю заголовки таблицы
             lViewSelect.FullRowSelect = true;
             lViewSelect.View = View.Details;
 
@@ -47,7 +47,7 @@ namespace ContractsV4._0
             lViewSelect.Columns.Add("Дата окончания");
             lViewSelect.Columns.Add("Комментарий");
 
-            await LoadContractsAsync();
+            await LoadContractsAsync(); // Выполняю запрос на получение данных из БД 
 
         }
 
@@ -94,16 +94,15 @@ namespace ContractsV4._0
                         item.SubItems[10].Text = ((Convert.ToDateTime(item.SubItems[10].Text)).ToShortDateString()).ToString();
 
                     if (item.SubItems[2].Text != "")
-                        sumAllContr += Convert.ToDouble(item.SubItems[2].Text); // Суммирую все суммы по кнтрактам
+                        sumAllContr += Convert.ToDouble(item.SubItems[2].Text); // Суммирую все суммы по контрактам
                     if (item.SubItems[4].Text != "")
                         sumAllPayContr += Convert.ToDouble(item.SubItems[4].Text);
 
                     lViewSelect.Items.Add(item);
-                    //MessageBox.Show(sumAllContr.ToString());
                     
                 }
-                ListViewItem sum = new ListViewItem(new string[] { "", "", sumAllContr.ToString(), "", sumAllPayContr.ToString() });
-                lViewSelect.Items.Add(sum);
+                ListViewItem sum = new ListViewItem(new string[] { "", "ИТОГО:", sumAllContr.ToString(), "", sumAllPayContr.ToString() });
+                lViewSelect.Items.Add(sum);  // добавляю итоговую строку в ListView
 
 
             }

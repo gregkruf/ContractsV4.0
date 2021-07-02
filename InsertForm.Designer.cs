@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.labelErrorSumContr = new System.Windows.Forms.Label();
-            this.labelErrorSumPaym = new System.Windows.Forms.Label();
             this.labelContractAdded = new System.Windows.Forms.Label();
             this.connnectionLabel = new System.Windows.Forms.Label();
             this.pickerDateFinishContr = new System.Windows.Forms.DateTimePicker();
@@ -52,13 +51,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tboxPOint44fzContr = new System.Windows.Forms.TextBox();
-            this.tboxCodeKVRContr = new System.Windows.Forms.TextBox();
             this.tboxPaymentContr = new System.Windows.Forms.TextBox();
             this.tboxPartnerContr = new System.Windows.Forms.TextBox();
             this.tboxSumContr = new System.Windows.Forms.TextBox();
             this.tboxNumContr = new System.Windows.Forms.TextBox();
+            this.cbCodeKVR = new System.Windows.Forms.ComboBox();
+            this.contractsV4DataSet1 = new ContractsV4._0.ContractsV4DataSet1();
+            this.kVRBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kVRTableAdapter = new ContractsV4._0.ContractsV4DataSet1TableAdapters.KVRTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,8 +78,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
-            this.tabPage1.Controls.Add(this.labelErrorSumContr);
-            this.tabPage1.Controls.Add(this.labelErrorSumPaym);
+            this.tabPage1.Controls.Add(this.cbCodeKVR);
             this.tabPage1.Controls.Add(this.labelContractAdded);
             this.tabPage1.Controls.Add(this.connnectionLabel);
             this.tabPage1.Controls.Add(this.pickerDateFinishContr);
@@ -96,7 +99,6 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.tboxPOint44fzContr);
-            this.tabPage1.Controls.Add(this.tboxCodeKVRContr);
             this.tabPage1.Controls.Add(this.tboxPaymentContr);
             this.tabPage1.Controls.Add(this.tboxPartnerContr);
             this.tabPage1.Controls.Add(this.tboxSumContr);
@@ -108,28 +110,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "insert";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // labelErrorSumContr
-            // 
-            this.labelErrorSumContr.AutoSize = true;
-            this.labelErrorSumContr.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorSumContr.Location = new System.Drawing.Point(345, 66);
-            this.labelErrorSumContr.Name = "labelErrorSumContr";
-            this.labelErrorSumContr.Size = new System.Drawing.Size(170, 13);
-            this.labelErrorSumContr.TabIndex = 30;
-            this.labelErrorSumContr.Text = "Необходимо поставить запятую";
-            this.labelErrorSumContr.Visible = false;
-            // 
-            // labelErrorSumPaym
-            // 
-            this.labelErrorSumPaym.AutoSize = true;
-            this.labelErrorSumPaym.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorSumPaym.Location = new System.Drawing.Point(345, 144);
-            this.labelErrorSumPaym.Name = "labelErrorSumPaym";
-            this.labelErrorSumPaym.Size = new System.Drawing.Size(170, 13);
-            this.labelErrorSumPaym.TabIndex = 29;
-            this.labelErrorSumPaym.Text = "Необходимо поставить запятую";
-            this.labelErrorSumPaym.Visible = false;
             // 
             // labelContractAdded
             // 
@@ -305,13 +285,6 @@
             this.tboxPOint44fzContr.Size = new System.Drawing.Size(100, 20);
             this.tboxPOint44fzContr.TabIndex = 8;
             // 
-            // tboxCodeKVRContr
-            // 
-            this.tboxCodeKVRContr.Location = new System.Drawing.Point(219, 193);
-            this.tboxCodeKVRContr.Name = "tboxCodeKVRContr";
-            this.tboxCodeKVRContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxCodeKVRContr.TabIndex = 6;
-            // 
             // tboxPaymentContr
             // 
             this.tboxPaymentContr.Location = new System.Drawing.Point(219, 141);
@@ -342,6 +315,32 @@
             this.tboxNumContr.Size = new System.Drawing.Size(100, 20);
             this.tboxNumContr.TabIndex = 0;
             // 
+            // cbCodeKVR
+            // 
+            this.cbCodeKVR.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbCodeKVR.DataSource = this.kVRBindingSource;
+            this.cbCodeKVR.DisplayMember = "CodeKVR";
+            this.cbCodeKVR.FormattingEnabled = true;
+            this.cbCodeKVR.Location = new System.Drawing.Point(335, 193);
+            this.cbCodeKVR.Name = "cbCodeKVR";
+            this.cbCodeKVR.Size = new System.Drawing.Size(121, 21);
+            this.cbCodeKVR.TabIndex = 29;
+            this.cbCodeKVR.ValueMember = "Id";
+            // 
+            // contractsV4DataSet1
+            // 
+            this.contractsV4DataSet1.DataSetName = "ContractsV4DataSet1";
+            this.contractsV4DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // kVRBindingSource
+            // 
+            this.kVRBindingSource.DataMember = "KVR";
+            this.kVRBindingSource.DataSource = this.contractsV4DataSet1;
+            // 
+            // kVRTableAdapter
+            // 
+            this.kVRTableAdapter.ClearBeforeFill = true;
+            // 
             // InsertForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +353,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,7 +377,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tboxPOint44fzContr;
-        private System.Windows.Forms.TextBox tboxCodeKVRContr;
         private System.Windows.Forms.TextBox tboxPaymentContr;
         private System.Windows.Forms.TextBox tboxPartnerContr;
         private System.Windows.Forms.TextBox tboxSumContr;
@@ -387,8 +387,10 @@
         private System.Windows.Forms.DateTimePicker pickerDateContr;
         private System.Windows.Forms.Label labelContractAdded;
         private System.Windows.Forms.Label connnectionLabel;
-        private System.Windows.Forms.Label labelErrorSumPaym;
-        private System.Windows.Forms.Label labelErrorSumContr;
+        private System.Windows.Forms.ComboBox cbCodeKVR;
+        private ContractsV4DataSet1 contractsV4DataSet1;
+        private System.Windows.Forms.BindingSource kVRBindingSource;
+        private ContractsV4DataSet1TableAdapters.KVRTableAdapter kVRTableAdapter;
     }
 }
 

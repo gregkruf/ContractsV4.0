@@ -25,6 +25,8 @@ namespace ContractsV4._0
 
         private async void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "contractsV4DataSet1.KVR". При необходимости она может быть перемещена или удалена.
+            this.kVRTableAdapter.Fill(this.contractsV4DataSet1.KVR);
             if (sqlConnection.State == ConnectionState.Open)
                 connnectionLabel.Visible = true;
         }
@@ -40,18 +42,46 @@ namespace ContractsV4._0
             "@pointFZ44Contracts, @dateStartContracts, @dateFinishContracts, @noticeContracts)", sqlConnection);
 
             try
-            { 
+            {
 
                 command.Parameters.AddWithValue("@numContracts", tboxNumContr.Text);
-                command.Parameters.AddWithValue("@sumContracts", Convert.ToDouble(tboxSumContr.Text));
-                command.Parameters.AddWithValue("@dateContracts", Convert.ToDateTime(pickerDateContr.Value));
-                command.Parameters.AddWithValue("@paymentContracts", Convert.ToDouble(tboxPaymentContr.Text));
-                command.Parameters.AddWithValue("@partnerContracts", Convert.ToInt32(tboxPartnerContr.Text));
-                command.Parameters.AddWithValue("@paymentDateContracts", Convert.ToDateTime(pickerDatePaymContr.Value));
-                command.Parameters.AddWithValue("@codeKVRContracts", Convert.ToInt32(tboxCodeKVRContr.Text));
-                command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.ToInt32(tboxPOint44fzContr.Text));
-                command.Parameters.AddWithValue("@dateStartContracts", Convert.ToDateTime(pickerDateStartContr.Value));
-                command.Parameters.AddWithValue("@dateFinishContracts", Convert.ToDateTime(pickerDateFinishContr.Value));
+
+                if (tboxSumContr.Text != "")
+                    command.Parameters.AddWithValue("@sumContracts", Convert.ToDouble(tboxSumContr.Text));
+                else
+                    command.Parameters.AddWithValue("@sumContracts", Convert.DBNull);
+                if (pickerDateContr.Value != null)
+                    command.Parameters.AddWithValue("@dateContracts", Convert.ToDateTime(pickerDateContr.Value));
+                else
+                    command.Parameters.AddWithValue("@dateContracts", Convert.DBNull);
+                if (tboxPaymentContr.Text != "")
+                    command.Parameters.AddWithValue("@paymentContracts", Convert.ToDouble(tboxPaymentContr.Text));
+                else
+                    command.Parameters.AddWithValue("@paymentContracts", Convert.DBNull);
+                if (tboxPaymentContr.Text != "")
+                    command.Parameters.AddWithValue("@partnerContracts", Convert.ToInt32(tboxPartnerContr.Text));
+                else
+                    command.Parameters.AddWithValue("@partnerContracts", Convert.DBNull);
+                if (pickerDatePaymContr.Value != null)
+                    command.Parameters.AddWithValue("@paymentDateContracts", Convert.ToDateTime(pickerDatePaymContr.Value));
+                else
+                    command.Parameters.AddWithValue("@paymentDateContracts", Convert.DBNull);
+                if (cbCodeKVR.Text != "")
+                    command.Parameters.AddWithValue("@codeKVRContracts", Convert.ToInt32(cbCodeKVR.SelectedValue));
+                else
+                    command.Parameters.AddWithValue("@codeKVRContracts", Convert.DBNull);
+                if (tboxPOint44fzContr.Text != "")
+                    command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.ToInt32(tboxPOint44fzContr.Text));
+                else
+                    command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.DBNull);
+                if (pickerDateStartContr.Value != null)
+                    command.Parameters.AddWithValue("@dateStartContracts", Convert.ToDateTime(pickerDateStartContr.Value));
+                else
+                    command.Parameters.AddWithValue("@dateStartContracts", Convert.DBNull);
+                if (pickerDateFinishContr.Value != null)
+                    command.Parameters.AddWithValue("@dateFinishContracts", Convert.ToDateTime(pickerDateFinishContr.Value));
+                else
+                    command.Parameters.AddWithValue("@dateFinishContracts", Convert.DBNull);
                 command.Parameters.AddWithValue("@noticeContracts", tboxNoticeContr.Text);
                 labelContractAdded.Visible = true;
 
@@ -119,6 +149,11 @@ namespace ContractsV4._0
                 tboxPaymentContr.SelectionStart = result.Length; 
             }
 
+
+        }
+
+        private void tboxCodeKVRContr_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
