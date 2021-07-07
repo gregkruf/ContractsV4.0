@@ -7,8 +7,6 @@ D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4.0.exe
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4.0.pdb
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\bin\Debug\ContractsV4.mdf
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\bin\Debug\ContractsV4_log.ldf
-D:\Sangrinik\ContractsV4.0\ContractsV4.0\bin\Debug\Database1.mdf
-D:\Sangrinik\ContractsV4.0\ContractsV4.0\bin\Debug\Database1_log.ldf
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\bin\Debug\ContractsV4.0.exe.manifest
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\bin\Debug\ContractsV4.0.application
 D:\Sangrinik\ContractsV4.0\ContractsV4.0\obj\Debug\ContractsV4.0.exe.manifest

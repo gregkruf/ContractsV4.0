@@ -54,7 +54,7 @@ namespace ContractsV4._0
         private async Task LoadContractsAsync() // Select
         {
             SqlDataReader sqlReader = null;
-            SqlCommand selectCommands = new SqlCommand("Select * from [Contracts]", sqlConnection);
+            SqlCommand selectCommands = new SqlCommand("Select * from [Contracts] c, [KVR] kvr, [44FZ] fz, SUPPLIERS s where c.codeKVRContracts = kvr.Id and c.pointFZ44Contracts = fz.Id and c.partnerContracts = s.Id", sqlConnection);
 
             try
             {
@@ -72,9 +72,9 @@ namespace ContractsV4._0
                             Convert.ToString(sqlReader["dateContracts"]),
                             Convert.ToString(sqlReader["paymentContracts"]),
                             Convert.ToString(sqlReader["paymentDateContracts"]),
-                            Convert.ToString(sqlReader["partnerContracts"]),
-                            Convert.ToString(sqlReader["codeKVRContracts"]),
-                            Convert.ToString(sqlReader["pointFZ44Contracts"]),
+                            Convert.ToString(sqlReader["NameSupp"]),
+                            Convert.ToString(sqlReader["CodeKVR"]),
+                            Convert.ToString("п " + sqlReader["point44FZ"]),
                             Convert.ToString(sqlReader["dateStartContracts"]), 
                             Convert.ToString(sqlReader["dateFinishContracts"]),
                             Convert.ToString(sqlReader["noticeContracts"]),
@@ -153,6 +153,24 @@ namespace ContractsV4._0
         private void lViewSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CodeKVRMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertForm insertForm = new InsertForm(sqlConnection);
+            insertForm.Show();
+        }
+
+        private void codeKVRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertForm insertForm = new InsertForm(sqlConnection);
+            insertForm.Show();
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertForm insertForm = new InsertForm(sqlConnection);
+            insertForm.Show();
         }
     }
 }

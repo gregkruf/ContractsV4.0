@@ -16,5 +16,10 @@ namespace ContractsV4._0
         {
             InitializeComponent();
         }
+
+        private void butInsertContracts_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

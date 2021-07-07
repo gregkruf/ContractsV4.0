@@ -25,6 +25,12 @@ namespace ContractsV4._0
 
         private async void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "suppliersDataSet.SUPPLIERS". При необходимости она может быть перемещена или удалена.
+            this.sUPPLIERSTableAdapter.Fill(this.suppliersDataSet.SUPPLIERS);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "fZ44DataSet._44FZ". При необходимости она может быть перемещена или удалена.
+            this._44FZTableAdapter.Fill(this.fZ44DataSet._44FZ);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataFromKVR.KVR". При необходимости она может быть перемещена или удалена.
+            this.kVRTableAdapter1.Fill(this.dataFromKVR.KVR);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "contractsV4DataSet1.KVR". При необходимости она может быть перемещена или удалена.
             this.kVRTableAdapter.Fill(this.contractsV4DataSet1.KVR);
             if (sqlConnection.State == ConnectionState.Open)
@@ -58,8 +64,8 @@ namespace ContractsV4._0
                     command.Parameters.AddWithValue("@paymentContracts", Convert.ToDouble(tboxPaymentContr.Text));
                 else
                     command.Parameters.AddWithValue("@paymentContracts", Convert.DBNull);
-                if (tboxPaymentContr.Text != "")
-                    command.Parameters.AddWithValue("@partnerContracts", Convert.ToInt32(tboxPartnerContr.Text));
+                if (cbSuppliers.Text != "")
+                    command.Parameters.AddWithValue("@partnerContracts", cbSuppliers.SelectedValue);
                 else
                     command.Parameters.AddWithValue("@partnerContracts", Convert.DBNull);
                 if (pickerDatePaymContr.Value != null)
@@ -70,8 +76,8 @@ namespace ContractsV4._0
                     command.Parameters.AddWithValue("@codeKVRContracts", Convert.ToInt32(cbCodeKVR.SelectedValue));
                 else
                     command.Parameters.AddWithValue("@codeKVRContracts", Convert.DBNull);
-                if (tboxPOint44fzContr.Text != "")
-                    command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.ToInt32(tboxPOint44fzContr.Text));
+                if (cbFZ44.Text != "")
+                    command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.ToInt32(cbFZ44.SelectedValue));
                 else
                     command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.DBNull);
                 if (pickerDateStartContr.Value != null)
@@ -153,6 +159,16 @@ namespace ContractsV4._0
         }
 
         private void tboxCodeKVRContr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kVRBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tboxPOint44fzContr_TextChanged(object sender, EventArgs e)
         {
 
         }

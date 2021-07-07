@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbCodeKVR = new System.Windows.Forms.ComboBox();
+            this.kVRBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataFromKVR = new ContractsV4._0.DataFromKVR();
             this.labelContractAdded = new System.Windows.Forms.Label();
             this.connnectionLabel = new System.Windows.Forms.Label();
             this.pickerDateFinishContr = new System.Windows.Forms.DateTimePicker();
@@ -50,19 +53,39 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tboxPOint44fzContr = new System.Windows.Forms.TextBox();
             this.tboxPaymentContr = new System.Windows.Forms.TextBox();
-            this.tboxPartnerContr = new System.Windows.Forms.TextBox();
             this.tboxSumContr = new System.Windows.Forms.TextBox();
             this.tboxNumContr = new System.Windows.Forms.TextBox();
-            this.cbCodeKVR = new System.Windows.Forms.ComboBox();
-            this.contractsV4DataSet1 = new ContractsV4._0.ContractsV4DataSet1();
             this.kVRBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contractsV4DataSet1 = new ContractsV4._0.ContractsV4DataSet1();
             this.kVRTableAdapter = new ContractsV4._0.ContractsV4DataSet1TableAdapters.KVRTableAdapter();
+            this.kVRBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.contractsV4DataSet = new ContractsV4._0.ContractsV4DataSet();
+            this.contractsV4DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kVRBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.kVRTableAdapter1 = new ContractsV4._0.DataFromKVRTableAdapters.KVRTableAdapter();
+            this.cbFZ44 = new System.Windows.Forms.ComboBox();
+            this.fZ44DataSet = new ContractsV4._0.FZ44DataSet();
+            this.fZBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._44FZTableAdapter = new ContractsV4._0.FZ44DataSetTableAdapters._44FZTableAdapter();
+            this.cbSuppliers = new System.Windows.Forms.ComboBox();
+            this.suppliersDataSet = new ContractsV4._0.SuppliersDataSet();
+            this.sUPPLIERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sUPPLIERSTableAdapter = new ContractsV4._0.SuppliersDataSetTableAdapters.SUPPLIERSTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataFromKVR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fZ44DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fZBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -72,12 +95,14 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(528, 425);
+            this.tabControl1.Size = new System.Drawing.Size(376, 425);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Controls.Add(this.cbSuppliers);
+            this.tabPage1.Controls.Add(this.cbFZ44);
             this.tabPage1.Controls.Add(this.cbCodeKVR);
             this.tabPage1.Controls.Add(this.labelContractAdded);
             this.tabPage1.Controls.Add(this.connnectionLabel);
@@ -98,18 +123,38 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.tboxPOint44fzContr);
             this.tabPage1.Controls.Add(this.tboxPaymentContr);
-            this.tabPage1.Controls.Add(this.tboxPartnerContr);
             this.tabPage1.Controls.Add(this.tboxSumContr);
             this.tabPage1.Controls.Add(this.tboxNumContr);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(520, 399);
+            this.tabPage1.Size = new System.Drawing.Size(368, 399);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "insert";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // cbCodeKVR
+            // 
+            this.cbCodeKVR.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbCodeKVR.DataSource = this.kVRBindingSource3;
+            this.cbCodeKVR.DisplayMember = "FULLNAMEKVR";
+            this.cbCodeKVR.FormattingEnabled = true;
+            this.cbCodeKVR.Location = new System.Drawing.Point(221, 193);
+            this.cbCodeKVR.Name = "cbCodeKVR";
+            this.cbCodeKVR.Size = new System.Drawing.Size(121, 21);
+            this.cbCodeKVR.TabIndex = 29;
+            this.cbCodeKVR.ValueMember = "Id";
+            // 
+            // kVRBindingSource3
+            // 
+            this.kVRBindingSource3.DataMember = "KVR";
+            this.kVRBindingSource3.DataSource = this.dataFromKVR;
+            // 
+            // dataFromKVR
+            // 
+            this.dataFromKVR.DataSetName = "DataFromKVR";
+            this.dataFromKVR.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelContractAdded
             // 
@@ -163,7 +208,7 @@
             // 
             // butInsertContracts
             // 
-            this.butInsertContracts.Location = new System.Drawing.Point(348, 339);
+            this.butInsertContracts.Location = new System.Drawing.Point(219, 359);
             this.butInsertContracts.Name = "butInsertContracts";
             this.butInsertContracts.Size = new System.Drawing.Size(120, 37);
             this.butInsertContracts.TabIndex = 22;
@@ -175,8 +220,9 @@
             // 
             this.tboxNoticeContr.Location = new System.Drawing.Point(219, 297);
             this.tboxNoticeContr.MaximumSize = new System.Drawing.Size(250, 50);
+            this.tboxNoticeContr.Multiline = true;
             this.tboxNoticeContr.Name = "tboxNoticeContr";
-            this.tboxNoticeContr.Size = new System.Drawing.Size(250, 20);
+            this.tboxNoticeContr.Size = new System.Drawing.Size(123, 50);
             this.tboxNoticeContr.TabIndex = 20;
             // 
             // label11
@@ -278,33 +324,19 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Номер контракта";
             // 
-            // tboxPOint44fzContr
-            // 
-            this.tboxPOint44fzContr.Location = new System.Drawing.Point(219, 219);
-            this.tboxPOint44fzContr.Name = "tboxPOint44fzContr";
-            this.tboxPOint44fzContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxPOint44fzContr.TabIndex = 8;
-            // 
             // tboxPaymentContr
             // 
             this.tboxPaymentContr.Location = new System.Drawing.Point(219, 141);
             this.tboxPaymentContr.Name = "tboxPaymentContr";
-            this.tboxPaymentContr.Size = new System.Drawing.Size(100, 20);
+            this.tboxPaymentContr.Size = new System.Drawing.Size(123, 20);
             this.tboxPaymentContr.TabIndex = 5;
             this.tboxPaymentContr.TextChanged += new System.EventHandler(this.tboxPaymentContr_TextChanged);
-            // 
-            // tboxPartnerContr
-            // 
-            this.tboxPartnerContr.Location = new System.Drawing.Point(219, 115);
-            this.tboxPartnerContr.Name = "tboxPartnerContr";
-            this.tboxPartnerContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxPartnerContr.TabIndex = 3;
             // 
             // tboxSumContr
             // 
             this.tboxSumContr.Location = new System.Drawing.Point(219, 63);
             this.tboxSumContr.Name = "tboxSumContr";
-            this.tboxSumContr.Size = new System.Drawing.Size(100, 20);
+            this.tboxSumContr.Size = new System.Drawing.Size(123, 20);
             this.tboxSumContr.TabIndex = 2;
             this.tboxSumContr.TextChanged += new System.EventHandler(this.tboxSumContr_TextChanged);
             // 
@@ -312,40 +344,104 @@
             // 
             this.tboxNumContr.Location = new System.Drawing.Point(219, 37);
             this.tboxNumContr.Name = "tboxNumContr";
-            this.tboxNumContr.Size = new System.Drawing.Size(100, 20);
+            this.tboxNumContr.Size = new System.Drawing.Size(123, 20);
             this.tboxNumContr.TabIndex = 0;
             // 
-            // cbCodeKVR
+            // kVRBindingSource
             // 
-            this.cbCodeKVR.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbCodeKVR.DataSource = this.kVRBindingSource;
-            this.cbCodeKVR.DisplayMember = "CodeKVR";
-            this.cbCodeKVR.FormattingEnabled = true;
-            this.cbCodeKVR.Location = new System.Drawing.Point(335, 193);
-            this.cbCodeKVR.Name = "cbCodeKVR";
-            this.cbCodeKVR.Size = new System.Drawing.Size(121, 21);
-            this.cbCodeKVR.TabIndex = 29;
-            this.cbCodeKVR.ValueMember = "Id";
+            this.kVRBindingSource.DataMember = "KVR";
+            this.kVRBindingSource.DataSource = this.contractsV4DataSet1;
+            this.kVRBindingSource.CurrentChanged += new System.EventHandler(this.kVRBindingSource_CurrentChanged);
             // 
             // contractsV4DataSet1
             // 
             this.contractsV4DataSet1.DataSetName = "ContractsV4DataSet1";
             this.contractsV4DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // kVRBindingSource
-            // 
-            this.kVRBindingSource.DataMember = "KVR";
-            this.kVRBindingSource.DataSource = this.contractsV4DataSet1;
-            // 
             // kVRTableAdapter
             // 
             this.kVRTableAdapter.ClearBeforeFill = true;
+            // 
+            // kVRBindingSource1
+            // 
+            this.kVRBindingSource1.DataMember = "KVR";
+            this.kVRBindingSource1.DataSource = this.contractsV4DataSet1;
+            // 
+            // contractsV4DataSet
+            // 
+            this.contractsV4DataSet.DataSetName = "ContractsV4DataSet";
+            this.contractsV4DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // contractsV4DataSetBindingSource
+            // 
+            this.contractsV4DataSetBindingSource.DataSource = this.contractsV4DataSet;
+            this.contractsV4DataSetBindingSource.Position = 0;
+            // 
+            // kVRBindingSource2
+            // 
+            this.kVRBindingSource2.DataMember = "KVR";
+            this.kVRBindingSource2.DataSource = this.dataFromKVR;
+            // 
+            // kVRTableAdapter1
+            // 
+            this.kVRTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cbFZ44
+            // 
+            this.cbFZ44.DataSource = this.fZBindingSource;
+            this.cbFZ44.DisplayMember = "POINT44FZ";
+            this.cbFZ44.FormattingEnabled = true;
+            this.cbFZ44.Location = new System.Drawing.Point(221, 219);
+            this.cbFZ44.Name = "cbFZ44";
+            this.cbFZ44.Size = new System.Drawing.Size(121, 21);
+            this.cbFZ44.TabIndex = 30;
+            this.cbFZ44.ValueMember = "Id";
+            // 
+            // fZ44DataSet
+            // 
+            this.fZ44DataSet.DataSetName = "FZ44DataSet";
+            this.fZ44DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fZBindingSource
+            // 
+            this.fZBindingSource.DataMember = "44FZ";
+            this.fZBindingSource.DataSource = this.fZ44DataSet;
+            // 
+            // _44FZTableAdapter
+            // 
+            this._44FZTableAdapter.ClearBeforeFill = true;
+            // 
+            // cbSuppliers
+            // 
+            this.cbSuppliers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbSuppliers.DataSource = this.sUPPLIERSBindingSource;
+            this.cbSuppliers.DisplayMember = "NameSupp";
+            this.cbSuppliers.FormattingEnabled = true;
+            this.cbSuppliers.Location = new System.Drawing.Point(218, 115);
+            this.cbSuppliers.Name = "cbSuppliers";
+            this.cbSuppliers.Size = new System.Drawing.Size(121, 21);
+            this.cbSuppliers.TabIndex = 31;
+            this.cbSuppliers.ValueMember = "Id";
+            // 
+            // suppliersDataSet
+            // 
+            this.suppliersDataSet.DataSetName = "SuppliersDataSet";
+            this.suppliersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sUPPLIERSBindingSource
+            // 
+            this.sUPPLIERSBindingSource.DataMember = "SUPPLIERS";
+            this.sUPPLIERSBindingSource.DataSource = this.suppliersDataSet;
+            // 
+            // sUPPLIERSTableAdapter
+            // 
+            this.sUPPLIERSTableAdapter.ClearBeforeFill = true;
             // 
             // InsertForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 425);
+            this.ClientSize = new System.Drawing.Size(376, 425);
             this.Controls.Add(this.tabControl1);
             this.Name = "InsertForm";
             this.Text = "Вставить";
@@ -353,8 +449,18 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataFromKVR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fZ44DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fZBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,9 +482,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tboxPOint44fzContr;
         private System.Windows.Forms.TextBox tboxPaymentContr;
-        private System.Windows.Forms.TextBox tboxPartnerContr;
         private System.Windows.Forms.TextBox tboxSumContr;
         private System.Windows.Forms.TextBox tboxNumContr;
         private System.Windows.Forms.DateTimePicker pickerDateFinishContr;
@@ -391,6 +495,21 @@
         private ContractsV4DataSet1 contractsV4DataSet1;
         private System.Windows.Forms.BindingSource kVRBindingSource;
         private ContractsV4DataSet1TableAdapters.KVRTableAdapter kVRTableAdapter;
+        private System.Windows.Forms.BindingSource kVRBindingSource1;
+        private System.Windows.Forms.BindingSource contractsV4DataSetBindingSource;
+        private ContractsV4DataSet contractsV4DataSet;
+        private DataFromKVR dataFromKVR;
+        private System.Windows.Forms.BindingSource kVRBindingSource2;
+        private DataFromKVRTableAdapters.KVRTableAdapter kVRTableAdapter1;
+        private System.Windows.Forms.BindingSource kVRBindingSource3;
+        private System.Windows.Forms.ComboBox cbFZ44;
+        private FZ44DataSet fZ44DataSet;
+        private System.Windows.Forms.BindingSource fZBindingSource;
+        private FZ44DataSetTableAdapters._44FZTableAdapter _44FZTableAdapter;
+        private System.Windows.Forms.ComboBox cbSuppliers;
+        private SuppliersDataSet suppliersDataSet;
+        private System.Windows.Forms.BindingSource sUPPLIERSBindingSource;
+        private SuppliersDataSetTableAdapters.SUPPLIERSTableAdapter sUPPLIERSTableAdapter;
     }
 }
 

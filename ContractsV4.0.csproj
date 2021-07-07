@@ -86,6 +86,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContractsV4DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataFromKVR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataFromKVR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FZ44DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FZ44DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InsertForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +109,11 @@
     </Compile>
     <Compile Include="SelectForm.Designer.cs">
       <DependentUpon>SelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SuppliersDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="UpdateForm.cs">
       <SubType>Form</SubType>
@@ -148,6 +163,28 @@
     <None Include="ContractsV4DataSet1.xss">
       <DependentUpon>ContractsV4DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DataFromKVR.xsc">
+      <DependentUpon>DataFromKVR.xsd</DependentUpon>
+    </None>
+    <None Include="DataFromKVR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataFromKVR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataFromKVR.xss">
+      <DependentUpon>DataFromKVR.xsd</DependentUpon>
+    </None>
+    <None Include="FZ44DataSet.xsc">
+      <DependentUpon>FZ44DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FZ44DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FZ44DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FZ44DataSet.xss">
+      <DependentUpon>FZ44DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -157,6 +194,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SuppliersDataSet.xsc">
+      <DependentUpon>SuppliersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SuppliersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SuppliersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SuppliersDataSet.xss">
+      <DependentUpon>SuppliersDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -168,13 +216,6 @@
     <Content Include="ContractsV4_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ContractsV4.mdf</DependentUpon>
-    </Content>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>

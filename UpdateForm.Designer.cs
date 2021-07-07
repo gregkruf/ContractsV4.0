@@ -138,6 +138,7 @@ namespace ContractsV4._0
             this.butInsertContracts.TabIndex = 49;
             this.butInsertContracts.Text = "Сохранить";
             this.butInsertContracts.UseVisualStyleBackColor = true;
+            this.butInsertContracts.Click += new System.EventHandler(this.butInsertContracts_Click);
             // 
             // tboxNoticeContr
             // 
