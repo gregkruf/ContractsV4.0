@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbSuppliers = new System.Windows.Forms.ComboBox();
+            this.sUPPLIERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.suppliersDataSet = new ContractsV4._0.SuppliersDataSet();
+            this.cbFZ44 = new System.Windows.Forms.ComboBox();
+            this.fZBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fZ44DataSet = new ContractsV4._0.FZ44DataSet();
             this.cbCodeKVR = new System.Windows.Forms.ComboBox();
             this.kVRBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.dataFromKVR = new ContractsV4._0.DataFromKVR();
@@ -64,16 +70,18 @@
             this.contractsV4DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kVRBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.kVRTableAdapter1 = new ContractsV4._0.DataFromKVRTableAdapters.KVRTableAdapter();
-            this.cbFZ44 = new System.Windows.Forms.ComboBox();
-            this.fZ44DataSet = new ContractsV4._0.FZ44DataSet();
-            this.fZBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._44FZTableAdapter = new ContractsV4._0.FZ44DataSetTableAdapters._44FZTableAdapter();
-            this.cbSuppliers = new System.Windows.Forms.ComboBox();
-            this.suppliersDataSet = new ContractsV4._0.SuppliersDataSet();
-            this.sUPPLIERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sUPPLIERSTableAdapter = new ContractsV4._0.SuppliersDataSetTableAdapters.SUPPLIERSTableAdapter();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fZBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fZ44DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFromKVR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource)).BeginInit();
@@ -82,10 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fZ44DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fZBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -101,6 +105,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Controls.Add(this.checkBox4);
+            this.tabPage1.Controls.Add(this.checkBox3);
+            this.tabPage1.Controls.Add(this.checkBox2);
+            this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.cbSuppliers);
             this.tabPage1.Controls.Add(this.cbFZ44);
             this.tabPage1.Controls.Add(this.cbCodeKVR);
@@ -133,6 +141,50 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "insert";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // cbSuppliers
+            // 
+            this.cbSuppliers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbSuppliers.DataSource = this.sUPPLIERSBindingSource;
+            this.cbSuppliers.DisplayMember = "NameSupp";
+            this.cbSuppliers.FormattingEnabled = true;
+            this.cbSuppliers.Location = new System.Drawing.Point(218, 115);
+            this.cbSuppliers.Name = "cbSuppliers";
+            this.cbSuppliers.Size = new System.Drawing.Size(121, 21);
+            this.cbSuppliers.TabIndex = 31;
+            this.cbSuppliers.ValueMember = "Id";
+            this.cbSuppliers.SelectedIndexChanged += new System.EventHandler(this.cbSuppliers_SelectedIndexChanged);
+            // 
+            // sUPPLIERSBindingSource
+            // 
+            this.sUPPLIERSBindingSource.DataMember = "SUPPLIERS";
+            this.sUPPLIERSBindingSource.DataSource = this.suppliersDataSet;
+            // 
+            // suppliersDataSet
+            // 
+            this.suppliersDataSet.DataSetName = "SuppliersDataSet";
+            this.suppliersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cbFZ44
+            // 
+            this.cbFZ44.DataSource = this.fZBindingSource;
+            this.cbFZ44.DisplayMember = "POINT44FZ";
+            this.cbFZ44.FormattingEnabled = true;
+            this.cbFZ44.Location = new System.Drawing.Point(221, 219);
+            this.cbFZ44.Name = "cbFZ44";
+            this.cbFZ44.Size = new System.Drawing.Size(121, 21);
+            this.cbFZ44.TabIndex = 30;
+            this.cbFZ44.ValueMember = "Id";
+            // 
+            // fZBindingSource
+            // 
+            this.fZBindingSource.DataMember = "44FZ";
+            this.fZBindingSource.DataSource = this.fZ44DataSet;
+            // 
+            // fZ44DataSet
+            // 
+            this.fZ44DataSet.DataSetName = "FZ44DataSet";
+            this.fZ44DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbCodeKVR
             // 
@@ -198,6 +250,7 @@
             this.pickerDatePaymContr.Name = "pickerDatePaymContr";
             this.pickerDatePaymContr.Size = new System.Drawing.Size(122, 20);
             this.pickerDatePaymContr.TabIndex = 24;
+            this.pickerDatePaymContr.ValueChanged += new System.EventHandler(this.pickerDatePaymContr_ValueChanged);
             // 
             // pickerDateContr
             // 
@@ -386,56 +439,53 @@
             // 
             this.kVRTableAdapter1.ClearBeforeFill = true;
             // 
-            // cbFZ44
-            // 
-            this.cbFZ44.DataSource = this.fZBindingSource;
-            this.cbFZ44.DisplayMember = "POINT44FZ";
-            this.cbFZ44.FormattingEnabled = true;
-            this.cbFZ44.Location = new System.Drawing.Point(221, 219);
-            this.cbFZ44.Name = "cbFZ44";
-            this.cbFZ44.Size = new System.Drawing.Size(121, 21);
-            this.cbFZ44.TabIndex = 30;
-            this.cbFZ44.ValueMember = "Id";
-            // 
-            // fZ44DataSet
-            // 
-            this.fZ44DataSet.DataSetName = "FZ44DataSet";
-            this.fZ44DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fZBindingSource
-            // 
-            this.fZBindingSource.DataMember = "44FZ";
-            this.fZBindingSource.DataSource = this.fZ44DataSet;
-            // 
             // _44FZTableAdapter
             // 
             this._44FZTableAdapter.ClearBeforeFill = true;
             // 
-            // cbSuppliers
-            // 
-            this.cbSuppliers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cbSuppliers.DataSource = this.sUPPLIERSBindingSource;
-            this.cbSuppliers.DisplayMember = "NameSupp";
-            this.cbSuppliers.FormattingEnabled = true;
-            this.cbSuppliers.Location = new System.Drawing.Point(218, 115);
-            this.cbSuppliers.Name = "cbSuppliers";
-            this.cbSuppliers.Size = new System.Drawing.Size(121, 21);
-            this.cbSuppliers.TabIndex = 31;
-            this.cbSuppliers.ValueMember = "Id";
-            // 
-            // suppliersDataSet
-            // 
-            this.suppliersDataSet.DataSetName = "SuppliersDataSet";
-            this.suppliersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sUPPLIERSBindingSource
-            // 
-            this.sUPPLIERSBindingSource.DataMember = "SUPPLIERS";
-            this.sUPPLIERSBindingSource.DataSource = this.suppliersDataSet;
-            // 
             // sUPPLIERSTableAdapter
             // 
             this.sUPPLIERSTableAdapter.ClearBeforeFill = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(199, 173);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 32;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(199, 92);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 33;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(199, 247);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3.TabIndex = 34;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(199, 274);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(15, 14);
+            this.checkBox4.TabIndex = 35;
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // InsertForm
             // 
@@ -449,6 +499,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fZBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fZ44DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataFromKVR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource)).EndInit();
@@ -457,10 +511,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kVRBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fZ44DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fZBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -510,6 +560,10 @@
         private SuppliersDataSet suppliersDataSet;
         private System.Windows.Forms.BindingSource sUPPLIERSBindingSource;
         private SuppliersDataSetTableAdapters.SUPPLIERSTableAdapter sUPPLIERSTableAdapter;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 

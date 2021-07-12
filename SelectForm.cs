@@ -54,7 +54,7 @@ namespace ContractsV4._0
         private async Task LoadContractsAsync() // Select
         {
             SqlDataReader sqlReader = null;
-            SqlCommand selectCommands = new SqlCommand("Select * from [Contracts] c, [KVR] kvr, [44FZ] fz, SUPPLIERS s where c.codeKVRContracts = kvr.Id and c.pointFZ44Contracts = fz.Id and c.partnerContracts = s.Id", sqlConnection);
+            SqlCommand selectCommands = new SqlCommand("Select * from [Contracts] c LEFT JOIN [KVR] kvr ON c.codeKVRContracts = kvr.Id lEFT JOIN [44FZ] fz ON c.pointFZ44Contracts = fz.Id LEFT JOIN SUPPLIERS s ON c.partnerContracts = s.Id", sqlConnection);
 
             try
             {

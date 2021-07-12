@@ -35,6 +35,8 @@ namespace ContractsV4._0
             this.kVRTableAdapter.Fill(this.contractsV4DataSet1.KVR);
             if (sqlConnection.State == ConnectionState.Open)
                 connnectionLabel.Visible = true;
+            DoCheck();
+
         }
 
         private async void butInsertContracts_Click(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace ContractsV4._0
                     command.Parameters.AddWithValue("@sumContracts", Convert.ToDouble(tboxSumContr.Text));
                 else
                     command.Parameters.AddWithValue("@sumContracts", Convert.DBNull);
-                if (pickerDateContr.Value != null)
+                if (checkBox2.Checked == true)
                     command.Parameters.AddWithValue("@dateContracts", Convert.ToDateTime(pickerDateContr.Value));
                 else
                     command.Parameters.AddWithValue("@dateContracts", Convert.DBNull);
@@ -64,30 +66,23 @@ namespace ContractsV4._0
                     command.Parameters.AddWithValue("@paymentContracts", Convert.ToDouble(tboxPaymentContr.Text));
                 else
                     command.Parameters.AddWithValue("@paymentContracts", Convert.DBNull);
-                if (cbSuppliers.Text != "")
-                    command.Parameters.AddWithValue("@partnerContracts", cbSuppliers.SelectedValue);
-                else
-                    command.Parameters.AddWithValue("@partnerContracts", Convert.DBNull);
-                if (pickerDatePaymContr.Value != null)
+                command.Parameters.AddWithValue("@partnerContracts", cbSuppliers.SelectedValue);
+
+                if (checkBox1.Checked == true)
                     command.Parameters.AddWithValue("@paymentDateContracts", Convert.ToDateTime(pickerDatePaymContr.Value));
                 else
                     command.Parameters.AddWithValue("@paymentDateContracts", Convert.DBNull);
-                if (cbCodeKVR.Text != "")
-                    command.Parameters.AddWithValue("@codeKVRContracts", Convert.ToInt32(cbCodeKVR.SelectedValue));
-                else
-                    command.Parameters.AddWithValue("@codeKVRContracts", Convert.DBNull);
-                if (cbFZ44.Text != "")
-                    command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.ToInt32(cbFZ44.SelectedValue));
-                else
-                    command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.DBNull);
-                if (pickerDateStartContr.Value != null)
+                    
+                command.Parameters.AddWithValue("@codeKVRContracts", Convert.ToInt32(cbCodeKVR.SelectedValue));
+
+                command.Parameters.AddWithValue("@pointFZ44Contracts", Convert.ToInt32(cbFZ44.SelectedValue));
+
+                if (checkBox3.Checked == true)
                     command.Parameters.AddWithValue("@dateStartContracts", Convert.ToDateTime(pickerDateStartContr.Value));
-                else
-                    command.Parameters.AddWithValue("@dateStartContracts", Convert.DBNull);
-                if (pickerDateFinishContr.Value != null)
+                else command.Parameters.AddWithValue("@dateStartContracts", Convert.DBNull);
+                if (checkBox4.Checked == true)
                     command.Parameters.AddWithValue("@dateFinishContracts", Convert.ToDateTime(pickerDateFinishContr.Value));
-                else
-                    command.Parameters.AddWithValue("@dateFinishContracts", Convert.DBNull);
+                else command.Parameters.AddWithValue("@dateFinishContracts", Convert.DBNull);
                 command.Parameters.AddWithValue("@noticeContracts", tboxNoticeContr.Text);
                 labelContractAdded.Visible = true;
 
@@ -170,7 +165,42 @@ namespace ContractsV4._0
 
         private void tboxPOint44fzContr_TextChanged(object sender, EventArgs e)
         {
+        }
 
+        private void cbSuppliers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void pickerDatePaymContr_ValueChanged(object sender, EventArgs e)
+        {
+        }
+                
+        private void DoCheck()
+        {
+            pickerDatePaymContr.Enabled = checkBox1.Checked;
+            pickerDateContr.Enabled = checkBox2.Checked;
+            pickerDateStartContr.Enabled = checkBox3.Checked;
+            pickerDateFinishContr.Enabled = checkBox4.Checked;
+        }
+        
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            DoCheck();
+        }
+        
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            DoCheck();
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            DoCheck();
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            DoCheck();
         }
     }
 
