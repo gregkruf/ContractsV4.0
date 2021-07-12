@@ -149,6 +149,11 @@ namespace ContractsV4._0
             InsertForm insertForm = new InsertForm(sqlConnection);
             insertForm.Show();
         }
+        private void butChange_Click(object sender, EventArgs e)
+        {
+            UpdateForm updateForm = new UpdateForm(sqlConnection);
+            updateForm.Show();
+        }
 
         private void lViewSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -172,5 +177,6 @@ namespace ContractsV4._0
             InsertForm insertForm = new InsertForm(sqlConnection);
             insertForm.Show();
         }
+
     }
 }

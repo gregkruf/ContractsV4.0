@@ -45,9 +45,9 @@ namespace ContractsV4._0
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.F5button = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.butChange = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.butDelete = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +76,7 @@ namespace ContractsV4._0
             this.lViewSelect.HideSelection = false;
             this.lViewSelect.Location = new System.Drawing.Point(0, 49);
             this.lViewSelect.Name = "lViewSelect";
-            this.lViewSelect.Size = new System.Drawing.Size(691, 288);
+            this.lViewSelect.Size = new System.Drawing.Size(815, 495);
             this.lViewSelect.TabIndex = 29;
             this.lViewSelect.UseCompatibleStateImageBehavior = false;
             this.lViewSelect.View = System.Windows.Forms.View.Tile;
@@ -90,7 +90,7 @@ namespace ContractsV4._0
             this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(691, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(815, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -108,20 +108,20 @@ namespace ContractsV4._0
             this.добавитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CodeKVRItemMenu});
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             // 
             // CodeKVRItemMenu
             // 
             this.CodeKVRItemMenu.Name = "CodeKVRItemMenu";
-            this.CodeKVRItemMenu.Size = new System.Drawing.Size(180, 22);
+            this.CodeKVRItemMenu.Size = new System.Drawing.Size(118, 22);
             this.CodeKVRItemMenu.Text = "Код КВР";
             this.CodeKVRItemMenu.Click += new System.EventHandler(this.CodeKVRMenuItem_Click);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             // 
             // правкаToolStripMenuItem
@@ -149,12 +149,12 @@ namespace ContractsV4._0
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.F5button,
             this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripLabel1,
-            this.toolStripButton4});
+            this.butChange,
+            this.butDelete,
+            this.toolStripLabel1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(691, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(815, 25);
             this.toolStrip1.TabIndex = 31;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -175,19 +175,20 @@ namespace ContractsV4._0
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(59, 22);
-            this.toolStripButton2.Text = "Вставить";
+            this.toolStripButton2.Size = new System.Drawing.Size(63, 22);
+            this.toolStripButton2.Text = "Добавить";
             this.toolStripButton2.ToolTipText = "Вставить в базу данных";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButton3
+            // butChange
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.butChange.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.butChange.Image = ((System.Drawing.Image)(resources.GetObject("butChange.Image")));
+            this.butChange.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.butChange.Name = "butChange";
+            this.butChange.Size = new System.Drawing.Size(65, 22);
+            this.butChange.Text = "Изменить";
+            this.butChange.Click += new System.EventHandler(this.butChange_Click);
             // 
             // toolStripLabel1
             // 
@@ -198,14 +199,14 @@ namespace ContractsV4._0
             this.toolStripLabel1.Text = "Соединение с базой установлено!";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
-            // toolStripButton4
+            // butDelete
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.butDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.butDelete.Image = ((System.Drawing.Image)(resources.GetObject("butDelete.Image")));
+            this.butDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.butDelete.Name = "butDelete";
+            this.butDelete.Size = new System.Drawing.Size(55, 22);
+            this.butDelete.Text = "Удалить";
             // 
             // contextMenuStrip1
             // 
@@ -219,20 +220,20 @@ namespace ContractsV4._0
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.addToolStripMenuItem.Text = "add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.deleteToolStripMenuItem.Text = "delete";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.updateToolStripMenuItem.Text = "update";
             // 
             // contextMenuStrip2
@@ -244,7 +245,7 @@ namespace ContractsV4._0
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 337);
+            this.ClientSize = new System.Drawing.Size(815, 544);
             this.Controls.Add(this.lViewSelect);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -279,9 +280,9 @@ namespace ContractsV4._0
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton F5button;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton butChange;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton butDelete;
         private System.Windows.Forms.ToolStripMenuItem CodeKVRItemMenu;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;

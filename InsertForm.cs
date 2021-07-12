@@ -33,8 +33,6 @@ namespace ContractsV4._0
             this.kVRTableAdapter1.Fill(this.dataFromKVR.KVR);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "contractsV4DataSet1.KVR". При необходимости она может быть перемещена или удалена.
             this.kVRTableAdapter.Fill(this.contractsV4DataSet1.KVR);
-            if (sqlConnection.State == ConnectionState.Open)
-                connnectionLabel.Visible = true;
             DoCheck();
 
         }

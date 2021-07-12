@@ -29,10 +29,14 @@ namespace ContractsV4._0
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelErrorSumContr = new System.Windows.Forms.Label();
-            this.labelErrorSumPaym = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbSuppliers = new System.Windows.Forms.ComboBox();
+            this.cbFZ44 = new System.Windows.Forms.ComboBox();
+            this.cbCodeKVR = new System.Windows.Forms.ComboBox();
             this.labelContractAdded = new System.Windows.Forms.Label();
-            this.connnectionLabel = new System.Windows.Forms.Label();
             this.pickerDateFinishContr = new System.Windows.Forms.DateTimePicker();
             this.pickerDateStartContr = new System.Windows.Forms.DateTimePicker();
             this.pickerDatePaymContr = new System.Windows.Forms.DateTimePicker();
@@ -50,254 +54,269 @@ namespace ContractsV4._0
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tboxPOint44fzContr = new System.Windows.Forms.TextBox();
-            this.tboxCodeKVRContr = new System.Windows.Forms.TextBox();
             this.tboxPaymentContr = new System.Windows.Forms.TextBox();
-            this.tboxPartnerContr = new System.Windows.Forms.TextBox();
             this.tboxSumContr = new System.Windows.Forms.TextBox();
             this.tboxNumContr = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // labelErrorSumContr
+            // checkBox4
             // 
-            this.labelErrorSumContr.AutoSize = true;
-            this.labelErrorSumContr.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorSumContr.Location = new System.Drawing.Point(310, 61);
-            this.labelErrorSumContr.Name = "labelErrorSumContr";
-            this.labelErrorSumContr.Size = new System.Drawing.Size(170, 13);
-            this.labelErrorSumContr.TabIndex = 57;
-            this.labelErrorSumContr.Text = "Необходимо поставить запятую";
-            this.labelErrorSumContr.Visible = false;
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(164, 268);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(15, 14);
+            this.checkBox4.TabIndex = 64;
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // labelErrorSumPaym
+            // checkBox3
             // 
-            this.labelErrorSumPaym.AutoSize = true;
-            this.labelErrorSumPaym.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorSumPaym.Location = new System.Drawing.Point(310, 139);
-            this.labelErrorSumPaym.Name = "labelErrorSumPaym";
-            this.labelErrorSumPaym.Size = new System.Drawing.Size(170, 13);
-            this.labelErrorSumPaym.TabIndex = 56;
-            this.labelErrorSumPaym.Text = "Необходимо поставить запятую";
-            this.labelErrorSumPaym.Visible = false;
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(164, 241);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3.TabIndex = 63;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(164, 86);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 62;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(164, 167);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 61;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // cbSuppliers
+            // 
+            this.cbSuppliers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbSuppliers.DisplayMember = "NameSupp";
+            this.cbSuppliers.FormattingEnabled = true;
+            this.cbSuppliers.Location = new System.Drawing.Point(183, 109);
+            this.cbSuppliers.Name = "cbSuppliers";
+            this.cbSuppliers.Size = new System.Drawing.Size(121, 21);
+            this.cbSuppliers.TabIndex = 60;
+            this.cbSuppliers.ValueMember = "Id";
+            // 
+            // cbFZ44
+            // 
+            this.cbFZ44.DisplayMember = "POINT44FZ";
+            this.cbFZ44.FormattingEnabled = true;
+            this.cbFZ44.Location = new System.Drawing.Point(186, 213);
+            this.cbFZ44.Name = "cbFZ44";
+            this.cbFZ44.Size = new System.Drawing.Size(121, 21);
+            this.cbFZ44.TabIndex = 59;
+            this.cbFZ44.ValueMember = "Id";
+            // 
+            // cbCodeKVR
+            // 
+            this.cbCodeKVR.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbCodeKVR.DisplayMember = "FULLNAMEKVR";
+            this.cbCodeKVR.FormattingEnabled = true;
+            this.cbCodeKVR.Location = new System.Drawing.Point(186, 187);
+            this.cbCodeKVR.Name = "cbCodeKVR";
+            this.cbCodeKVR.Size = new System.Drawing.Size(121, 21);
+            this.cbCodeKVR.TabIndex = 58;
+            this.cbCodeKVR.ValueMember = "Id";
             // 
             // labelContractAdded
             // 
             this.labelContractAdded.AutoSize = true;
             this.labelContractAdded.ForeColor = System.Drawing.Color.Red;
-            this.labelContractAdded.Location = new System.Drawing.Point(12, 358);
+            this.labelContractAdded.Location = new System.Drawing.Point(12, 357);
             this.labelContractAdded.Name = "labelContractAdded";
-            this.labelContractAdded.Size = new System.Drawing.Size(105, 13);
-            this.labelContractAdded.TabIndex = 55;
-            this.labelContractAdded.Text = "Контракт добавлен";
+            this.labelContractAdded.Size = new System.Drawing.Size(101, 13);
+            this.labelContractAdded.TabIndex = 57;
+            this.labelContractAdded.Text = "Контракт изменен";
             this.labelContractAdded.Visible = false;
-            // 
-            // connnectionLabel
-            // 
-            this.connnectionLabel.AutoSize = true;
-            this.connnectionLabel.ForeColor = System.Drawing.Color.Red;
-            this.connnectionLabel.Location = new System.Drawing.Point(12, 10);
-            this.connnectionLabel.Name = "connnectionLabel";
-            this.connnectionLabel.Size = new System.Drawing.Size(180, 13);
-            this.connnectionLabel.TabIndex = 54;
-            this.connnectionLabel.Text = "Соединение с базой установлено!";
-            this.connnectionLabel.Visible = false;
             // 
             // pickerDateFinishContr
             // 
-            this.pickerDateFinishContr.Location = new System.Drawing.Point(185, 266);
+            this.pickerDateFinishContr.Location = new System.Drawing.Point(185, 265);
             this.pickerDateFinishContr.Name = "pickerDateFinishContr";
             this.pickerDateFinishContr.Size = new System.Drawing.Size(122, 20);
-            this.pickerDateFinishContr.TabIndex = 53;
+            this.pickerDateFinishContr.TabIndex = 55;
             // 
             // pickerDateStartContr
             // 
-            this.pickerDateStartContr.Location = new System.Drawing.Point(185, 240);
+            this.pickerDateStartContr.Location = new System.Drawing.Point(185, 239);
             this.pickerDateStartContr.Name = "pickerDateStartContr";
             this.pickerDateStartContr.Size = new System.Drawing.Size(122, 20);
-            this.pickerDateStartContr.TabIndex = 52;
+            this.pickerDateStartContr.TabIndex = 54;
             // 
             // pickerDatePaymContr
             // 
-            this.pickerDatePaymContr.Location = new System.Drawing.Point(185, 162);
+            this.pickerDatePaymContr.Location = new System.Drawing.Point(185, 161);
             this.pickerDatePaymContr.Name = "pickerDatePaymContr";
             this.pickerDatePaymContr.Size = new System.Drawing.Size(122, 20);
-            this.pickerDatePaymContr.TabIndex = 51;
+            this.pickerDatePaymContr.TabIndex = 53;
             // 
             // pickerDateContr
             // 
-            this.pickerDateContr.Location = new System.Drawing.Point(185, 84);
+            this.pickerDateContr.Location = new System.Drawing.Point(185, 83);
             this.pickerDateContr.Name = "pickerDateContr";
             this.pickerDateContr.Size = new System.Drawing.Size(122, 20);
-            this.pickerDateContr.TabIndex = 50;
+            this.pickerDateContr.TabIndex = 52;
             // 
             // butInsertContracts
             // 
-            this.butInsertContracts.Location = new System.Drawing.Point(313, 334);
+            this.butInsertContracts.Location = new System.Drawing.Point(184, 353);
             this.butInsertContracts.Name = "butInsertContracts";
             this.butInsertContracts.Size = new System.Drawing.Size(120, 37);
-            this.butInsertContracts.TabIndex = 49;
+            this.butInsertContracts.TabIndex = 51;
             this.butInsertContracts.Text = "Сохранить";
             this.butInsertContracts.UseVisualStyleBackColor = true;
-            this.butInsertContracts.Click += new System.EventHandler(this.butInsertContracts_Click);
             // 
             // tboxNoticeContr
             // 
-            this.tboxNoticeContr.Location = new System.Drawing.Point(184, 292);
+            this.tboxNoticeContr.Location = new System.Drawing.Point(184, 291);
             this.tboxNoticeContr.MaximumSize = new System.Drawing.Size(250, 50);
+            this.tboxNoticeContr.Multiline = true;
             this.tboxNoticeContr.Name = "tboxNoticeContr";
-            this.tboxNoticeContr.Size = new System.Drawing.Size(250, 20);
-            this.tboxNoticeContr.TabIndex = 48;
+            this.tboxNoticeContr.Size = new System.Drawing.Size(123, 50);
+            this.tboxNoticeContr.TabIndex = 50;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 295);
+            this.label11.Location = new System.Drawing.Point(12, 294);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 13);
-            this.label11.TabIndex = 47;
+            this.label11.TabIndex = 49;
             this.label11.Text = "Комментарий";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 269);
+            this.label9.Location = new System.Drawing.Point(12, 268);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(139, 13);
-            this.label9.TabIndex = 46;
+            this.label9.TabIndex = 48;
             this.label9.Text = "Дата окончания действия";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 243);
+            this.label10.Location = new System.Drawing.Point(12, 242);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(121, 13);
-            this.label10.TabIndex = 45;
+            this.label10.TabIndex = 47;
             this.label10.Text = "Дата начала действия";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 217);
+            this.label5.Location = new System.Drawing.Point(12, 216);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
-            this.label5.TabIndex = 44;
+            this.label5.TabIndex = 46;
             this.label5.Text = "Пункт 44ФЗ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 191);
+            this.label6.Location = new System.Drawing.Point(12, 190);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
-            this.label6.TabIndex = 43;
+            this.label6.TabIndex = 45;
             this.label6.Text = "Код КВР";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 165);
+            this.label7.Location = new System.Drawing.Point(12, 164);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 42;
+            this.label7.TabIndex = 44;
             this.label7.Text = "Дата оплаты";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 139);
+            this.label8.Location = new System.Drawing.Point(12, 138);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 13);
-            this.label8.TabIndex = 41;
+            this.label8.TabIndex = 43;
             this.label8.Text = "Сумма оплаты";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 113);
+            this.label3.Location = new System.Drawing.Point(12, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 40;
+            this.label3.TabIndex = 42;
             this.label3.Text = "Контрагент";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 87);
+            this.label4.Location = new System.Drawing.Point(12, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 13);
-            this.label4.TabIndex = 39;
+            this.label4.TabIndex = 41;
             this.label4.Text = "Дата контракта";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Location = new System.Drawing.Point(12, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 38;
+            this.label2.TabIndex = 40;
             this.label2.Text = "Сумма контракта";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(12, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 37;
+            this.label1.TabIndex = 39;
             this.label1.Text = "Номер контракта";
-            // 
-            // tboxPOint44fzContr
-            // 
-            this.tboxPOint44fzContr.Location = new System.Drawing.Point(184, 214);
-            this.tboxPOint44fzContr.Name = "tboxPOint44fzContr";
-            this.tboxPOint44fzContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxPOint44fzContr.TabIndex = 36;
-            // 
-            // tboxCodeKVRContr
-            // 
-            this.tboxCodeKVRContr.Location = new System.Drawing.Point(184, 188);
-            this.tboxCodeKVRContr.Name = "tboxCodeKVRContr";
-            this.tboxCodeKVRContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxCodeKVRContr.TabIndex = 35;
             // 
             // tboxPaymentContr
             // 
-            this.tboxPaymentContr.Location = new System.Drawing.Point(184, 136);
+            this.tboxPaymentContr.Location = new System.Drawing.Point(184, 135);
             this.tboxPaymentContr.Name = "tboxPaymentContr";
-            this.tboxPaymentContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxPaymentContr.TabIndex = 34;
-            // 
-            // tboxPartnerContr
-            // 
-            this.tboxPartnerContr.Location = new System.Drawing.Point(184, 110);
-            this.tboxPartnerContr.Name = "tboxPartnerContr";
-            this.tboxPartnerContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxPartnerContr.TabIndex = 33;
+            this.tboxPaymentContr.Size = new System.Drawing.Size(123, 20);
+            this.tboxPaymentContr.TabIndex = 38;
             // 
             // tboxSumContr
             // 
-            this.tboxSumContr.Location = new System.Drawing.Point(184, 58);
+            this.tboxSumContr.Location = new System.Drawing.Point(184, 57);
             this.tboxSumContr.Name = "tboxSumContr";
-            this.tboxSumContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxSumContr.TabIndex = 32;
+            this.tboxSumContr.Size = new System.Drawing.Size(123, 20);
+            this.tboxSumContr.TabIndex = 37;
             // 
             // tboxNumContr
             // 
-            this.tboxNumContr.Location = new System.Drawing.Point(184, 32);
+            this.tboxNumContr.Location = new System.Drawing.Point(184, 31);
             this.tboxNumContr.Name = "tboxNumContr";
-            this.tboxNumContr.Size = new System.Drawing.Size(100, 20);
-            this.tboxNumContr.TabIndex = 31;
+            this.tboxNumContr.Size = new System.Drawing.Size(123, 20);
+            this.tboxNumContr.TabIndex = 36;
             // 
             // UpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 392);
-            this.Controls.Add(this.labelErrorSumContr);
-            this.Controls.Add(this.labelErrorSumPaym);
+            this.ClientSize = new System.Drawing.Size(319, 392);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbSuppliers);
+            this.Controls.Add(this.cbFZ44);
+            this.Controls.Add(this.cbCodeKVR);
             this.Controls.Add(this.labelContractAdded);
-            this.Controls.Add(this.connnectionLabel);
             this.Controls.Add(this.pickerDateFinishContr);
             this.Controls.Add(this.pickerDateStartContr);
             this.Controls.Add(this.pickerDatePaymContr);
@@ -315,14 +334,12 @@ namespace ContractsV4._0
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tboxPOint44fzContr);
-            this.Controls.Add(this.tboxCodeKVRContr);
             this.Controls.Add(this.tboxPaymentContr);
-            this.Controls.Add(this.tboxPartnerContr);
             this.Controls.Add(this.tboxSumContr);
             this.Controls.Add(this.tboxNumContr);
             this.Name = "UpdateForm";
-            this.Text = "UpdateForm";
+            this.Text = "Изменение контракта...";
+            this.Load += new System.EventHandler(this.UpdateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,10 +347,14 @@ namespace ContractsV4._0
 
         #endregion
 
-        private System.Windows.Forms.Label labelErrorSumContr;
-        private System.Windows.Forms.Label labelErrorSumPaym;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox cbSuppliers;
+        private System.Windows.Forms.ComboBox cbFZ44;
+        private System.Windows.Forms.ComboBox cbCodeKVR;
         private System.Windows.Forms.Label labelContractAdded;
-        private System.Windows.Forms.Label connnectionLabel;
         private System.Windows.Forms.DateTimePicker pickerDateFinishContr;
         private System.Windows.Forms.DateTimePicker pickerDateStartContr;
         private System.Windows.Forms.DateTimePicker pickerDatePaymContr;
@@ -351,10 +372,7 @@ namespace ContractsV4._0
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tboxPOint44fzContr;
-        private System.Windows.Forms.TextBox tboxCodeKVRContr;
         private System.Windows.Forms.TextBox tboxPaymentContr;
-        private System.Windows.Forms.TextBox tboxPartnerContr;
         private System.Windows.Forms.TextBox tboxSumContr;
         private System.Windows.Forms.TextBox tboxNumContr;
     }

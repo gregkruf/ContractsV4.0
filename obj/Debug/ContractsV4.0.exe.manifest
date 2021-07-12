@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>py/EtlRwdy/WkvAmxKrZje041PnIXTdIsXrb3OMuWU4=</dsig:DigestValue>
+        <dsig:DigestValue>yGxth3WARGtdwgnuPoAUiACs2rWns3EV7H9Bx+jMlx0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>sJX24UsZqC/m/upy2AjTaZasM3MH/aeOtMhqZ4Wd5Ss=</dsig:DigestValue>
+      <dsig:DigestValue>/w9jQF8Dg55ohLH0ojGUbyo+mpk5nyKqPoOJDhAr758=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ContractsV4_log.ldf" size="851968" writeableType="applicationData">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BpD9Iq4RGX0/E1URt/ysF4eYe8SzW2xMuVp3TOfyMaE=</dsig:DigestValue>
+      <dsig:DigestValue>4hvVO/RP2J7KbameUchmj8mCoccI/vHhn6DBxb7J8TM=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
