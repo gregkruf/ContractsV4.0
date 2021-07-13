@@ -78,10 +78,13 @@ namespace ContractsV4._0
                 if (checkBox3.Checked == true)
                     command.Parameters.AddWithValue("@dateStartContracts", Convert.ToDateTime(pickerDateStartContr.Value));
                 else command.Parameters.AddWithValue("@dateStartContracts", Convert.DBNull);
+                
                 if (checkBox4.Checked == true)
                     command.Parameters.AddWithValue("@dateFinishContracts", Convert.ToDateTime(pickerDateFinishContr.Value));
                 else command.Parameters.AddWithValue("@dateFinishContracts", Convert.DBNull);
+                
                 command.Parameters.AddWithValue("@noticeContracts", tboxNoticeContr.Text);
+                
                 labelContractAdded.Visible = true;
 
                 await command.ExecuteNonQueryAsync();

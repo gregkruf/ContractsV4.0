@@ -19,6 +19,8 @@ namespace ContractsV4._0
         public SelectForm()
         {
             InitializeComponent();
+
+            lViewSelect.ContextMenuStrip = contextMenuStrip1;
         }
 
         private async void SelectForm_Load(object sender, EventArgs e)
@@ -42,13 +44,26 @@ namespace ContractsV4._0
             lViewSelect.Columns.Add("Дата платежа");
             lViewSelect.Columns.Add("Поставщик");
             lViewSelect.Columns.Add("КВР");
-            lViewSelect.Columns.Add("44ФЗ");
+            lViewSelect.Columns.Add("Пункт 44ФЗ");
             lViewSelect.Columns.Add("Дата начала");
             lViewSelect.Columns.Add("Дата окончания");
             lViewSelect.Columns.Add("Комментарий");
 
-            await LoadContractsAsync(); // Выполняю запрос на получение данных из БД 
 
+            await LoadContractsAsync(); // Выполняю запрос на получение данных из БД 
+            //lViewSelect.MouseClick += new MouseEventHandler(lViewSelect_MouseClick);
+        }
+
+        private void lViewSelect_MouseClick(object sender, MouseEventHandler e)
+        {
+            //if (e.Button = MouseButtons.Right)
+            //{
+            //    var focusedItem = lViewSelect.FocusedItem;
+            //    if ( focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+            //    {
+            //        contextMenuStrip1.Show(Cursor.Position);
+            //    }
+            //}
         }
 
         public async Task LoadContractsAsync() // Select
@@ -189,7 +204,6 @@ namespace ContractsV4._0
         }
         private void lViewSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void CodeKVRMenuItem_Click(object sender, EventArgs e)
@@ -208,5 +222,33 @@ namespace ContractsV4._0
             insertForm.Show();
         }
 
+        private void lViewSelect_DoubleClick(object sender, EventArgs e)
+        {
+
+            UpdateForm updateFormDouble = new UpdateForm(sqlConnection, Convert.ToInt32(lViewSelect.SelectedItems[0].SubItems[0].Text));
+            updateFormDouble.Show();
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void changeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void поставщикToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void контрактToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertForm insertForm = new InsertForm(sqlConnection);
+            insertForm.Show();
+        }
     }
 }

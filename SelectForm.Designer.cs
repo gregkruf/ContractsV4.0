@@ -49,10 +49,16 @@ namespace ContractsV4._0
             this.butDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kvrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fZ44ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поставщикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemContr = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.контрактToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.поставщикToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.кодКВРToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пункт44ФЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractsV4DataSetBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -82,6 +88,7 @@ namespace ContractsV4._0
             this.lViewSelect.UseCompatibleStateImageBehavior = false;
             this.lViewSelect.View = System.Windows.Forms.View.Tile;
             this.lViewSelect.SelectedIndexChanged += new System.EventHandler(this.lViewSelect_SelectedIndexChanged);
+            this.lViewSelect.DoubleClick += new System.EventHandler(this.lViewSelect_DoubleClick);
             // 
             // menuStrip1
             // 
@@ -213,35 +220,82 @@ namespace ContractsV4._0
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.updateToolStripMenuItem});
+            this.toolStripMenuItem1,
+            this.изменитьToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(112, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 48);
             // 
-            // addToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.addToolStripMenuItem.Text = "add";
-            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemContr,
+            this.поставщикToolStripMenuItem,
+            this.kvrToolStripMenuItem,
+            this.fZ44ToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.toolStripMenuItem1.Text = "Добавить";
             // 
-            // deleteToolStripMenuItem
+            // kvrToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.deleteToolStripMenuItem.Text = "delete";
+            this.kvrToolStripMenuItem.Name = "kvrToolStripMenuItem";
+            this.kvrToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kvrToolStripMenuItem.Text = "Код КВР";
             // 
-            // updateToolStripMenuItem
+            // fZ44ToolStripMenuItem
             // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.updateToolStripMenuItem.Text = "update";
+            this.fZ44ToolStripMenuItem.Name = "fZ44ToolStripMenuItem";
+            this.fZ44ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fZ44ToolStripMenuItem.Text = "Пункт 44ФЗ";
             // 
-            // contextMenuStrip2
+            // поставщикToolStripMenuItem
             // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            this.поставщикToolStripMenuItem.Name = "поставщикToolStripMenuItem";
+            this.поставщикToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.поставщикToolStripMenuItem.Text = "Поставщик";
+            this.поставщикToolStripMenuItem.Click += new System.EventHandler(this.поставщикToolStripMenuItem_Click);
+            // 
+            // MenuItemContr
+            // 
+            this.MenuItemContr.Name = "MenuItemContr";
+            this.MenuItemContr.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemContr.Text = "Контракт";
+            this.MenuItemContr.Click += new System.EventHandler(this.контрактToolStripMenuItem_Click);
+            // 
+            // изменитьToolStripMenuItem1
+            // 
+            this.изменитьToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.контрактToolStripMenuItem1,
+            this.поставщикToolStripMenuItem1,
+            this.кодКВРToolStripMenuItem,
+            this.пункт44ФЗToolStripMenuItem});
+            this.изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
+            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.изменитьToolStripMenuItem1.Text = "Изменить";
+            // 
+            // контрактToolStripMenuItem1
+            // 
+            this.контрактToolStripMenuItem1.Name = "контрактToolStripMenuItem1";
+            this.контрактToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.контрактToolStripMenuItem1.Text = "Контракт";
+            // 
+            // поставщикToolStripMenuItem1
+            // 
+            this.поставщикToolStripMenuItem1.Name = "поставщикToolStripMenuItem1";
+            this.поставщикToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.поставщикToolStripMenuItem1.Text = "Поставщик";
+            // 
+            // кодКВРToolStripMenuItem
+            // 
+            this.кодКВРToolStripMenuItem.Name = "кодКВРToolStripMenuItem";
+            this.кодКВРToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.кодКВРToolStripMenuItem.Text = "Код КВР";
+            // 
+            // пункт44ФЗToolStripMenuItem
+            // 
+            this.пункт44ФЗToolStripMenuItem.Name = "пункт44ФЗToolStripMenuItem";
+            this.пункт44ФЗToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.пункт44ФЗToolStripMenuItem.Text = "Пункт 44ФЗ";
             // 
             // SelectForm
             // 
@@ -253,6 +307,7 @@ namespace ContractsV4._0
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SelectForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выборка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectForm_FormClosing);
             this.Load += new System.EventHandler(this.SelectForm_Load);
@@ -287,9 +342,15 @@ namespace ContractsV4._0
         private System.Windows.Forms.ToolStripButton butDelete;
         private System.Windows.Forms.ToolStripMenuItem CodeKVRItemMenu;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem kvrToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fZ44ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поставщикToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemContr;
+        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem контрактToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem поставщикToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem кодКВРToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пункт44ФЗToolStripMenuItem;
     }
 }
