@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ContractsV4.0.exe" size="148416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ContractsV4.0.exe" size="153024">
       <assemblyIdentity name="ContractsV4.0" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yGxth3WARGtdwgnuPoAUiACs2rWns3EV7H9Bx+jMlx0=</dsig:DigestValue>
+        <dsig:DigestValue>bbCu/7oICeHRhHwfYLXSZ+w019G33DqKgCpehpWNjiQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -68,7 +68,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/w9jQF8Dg55ohLH0ojGUbyo+mpk5nyKqPoOJDhAr758=</dsig:DigestValue>
+      <dsig:DigestValue>/cEio1W3kGpH2+60pQOVMF+XAnHaGAyKdBso57ZXV/k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ContractsV4_log.ldf" size="851968" writeableType="applicationData">
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4hvVO/RP2J7KbameUchmj8mCoccI/vHhn6DBxb7J8TM=</dsig:DigestValue>
+      <dsig:DigestValue>H167ivuX9UNQ43wZDipdiZHe0JFU0P/LSeRADdpafOI=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

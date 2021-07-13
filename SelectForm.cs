@@ -51,7 +51,7 @@ namespace ContractsV4._0
 
         }
 
-        private async Task LoadContractsAsync() // Select
+        public async Task LoadContractsAsync() // Select
         {
             SqlDataReader sqlReader = null;
             SqlCommand selectCommands = new SqlCommand("Select * from [Contracts] c LEFT JOIN [KVR] kvr ON c.codeKVRContracts = kvr.Id lEFT JOIN [44FZ] fz ON c.pointFZ44Contracts = fz.Id LEFT JOIN SUPPLIERS s ON c.partnerContracts = s.Id", sqlConnection);
@@ -151,10 +151,42 @@ namespace ContractsV4._0
         }
         private void butChange_Click(object sender, EventArgs e)
         {
-            UpdateForm updateForm = new UpdateForm(sqlConnection);
-            updateForm.Show();
+            if (lViewSelect.SelectedItems.Count > 0)
+            {
+                UpdateForm updateForm = new UpdateForm(sqlConnection, Convert.ToInt32(lViewSelect.SelectedItems[0].SubItems[0].Text));
+                updateForm.Show();
+            }
+            else
+                MessageBox.Show("Выделите элемент...");
         }
 
+        private async void butDelete_Click(object sender, EventArgs e)
+        {
+            if(lViewSelect.SelectedItems.Count > 0)
+            {
+                DialogResult res = MessageBox.Show("Вы действительно хотите удалить строку?", "Удаление строки", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                switch (res)
+                {
+                    case DialogResult.OK:
+                        SqlCommand deleteSqlCommand = new SqlCommand("Delete From [Contracts] Where Id = @id", sqlConnection);
+                        deleteSqlCommand.Parameters.AddWithValue("id", Convert.ToInt32(lViewSelect.SelectedItems[0].SubItems[0].Text));
+
+                        try
+                        {
+                            await deleteSqlCommand.ExecuteNonQueryAsync();
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        lViewSelect.Items.Clear();
+                        await LoadContractsAsync();
+                    break;
+                }
+            }
+            else
+                MessageBox.Show("Выделите элемент...");
+        }
         private void lViewSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -162,14 +194,12 @@ namespace ContractsV4._0
 
         private void CodeKVRMenuItem_Click(object sender, EventArgs e)
         {
-            InsertForm insertForm = new InsertForm(sqlConnection);
-            insertForm.Show();
+
         }
 
         private void codeKVRToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InsertForm insertForm = new InsertForm(sqlConnection);
-            insertForm.Show();
+
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)

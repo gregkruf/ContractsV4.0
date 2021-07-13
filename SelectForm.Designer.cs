@@ -46,8 +46,8 @@ namespace ContractsV4._0
             this.F5button = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.butChange = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.butDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +75,7 @@ namespace ContractsV4._0
             this.lViewSelect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lViewSelect.HideSelection = false;
             this.lViewSelect.Location = new System.Drawing.Point(0, 49);
+            this.lViewSelect.MultiSelect = false;
             this.lViewSelect.Name = "lViewSelect";
             this.lViewSelect.Size = new System.Drawing.Size(815, 495);
             this.lViewSelect.TabIndex = 29;
@@ -190,15 +191,6 @@ namespace ContractsV4._0
             this.butChange.Text = "Изменить";
             this.butChange.Click += new System.EventHandler(this.butChange_Click);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripLabel1.ForeColor = System.Drawing.Color.Red;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(194, 22);
-            this.toolStripLabel1.Text = "Соединение с базой установлено!";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
-            // 
             // butDelete
             // 
             this.butDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -207,6 +199,16 @@ namespace ContractsV4._0
             this.butDelete.Name = "butDelete";
             this.butDelete.Size = new System.Drawing.Size(55, 22);
             this.butDelete.Text = "Удалить";
+            this.butDelete.Click += new System.EventHandler(this.butDelete_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripLabel1.ForeColor = System.Drawing.Color.Red;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(194, 22);
+            this.toolStripLabel1.Text = "Соединение с базой установлено!";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // contextMenuStrip1
             // 
