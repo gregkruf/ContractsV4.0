@@ -16,6 +16,12 @@ namespace ContractsV4._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            //Entities.MyDBContext c = new Entities.MyDBContext();
+
+            //c.Users.Add(new Entities.User() { Name = "1", Surname = "2" });
+            //c.SaveChanges();
+            
             Application.Run(new SelectForm());
         }
     }

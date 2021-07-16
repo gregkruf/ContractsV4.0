@@ -50,12 +50,12 @@ namespace ContractsV4._0
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemContr = new System.Windows.Forms.ToolStripMenuItem();
+            this.поставщикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kvrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fZ44ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.поставщикToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemContr = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.контрактToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemContrChange = new System.Windows.Forms.ToolStripMenuItem();
             this.поставщикToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.кодКВРToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пункт44ФЗToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -223,7 +223,7 @@ namespace ContractsV4._0
             this.toolStripMenuItem1,
             this.изменитьToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // toolStripMenuItem1
             // 
@@ -233,51 +233,52 @@ namespace ContractsV4._0
             this.kvrToolStripMenuItem,
             this.fZ44ToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Добавить";
+            // 
+            // MenuItemContr
+            // 
+            this.MenuItemContr.Name = "MenuItemContr";
+            this.MenuItemContr.Size = new System.Drawing.Size(138, 22);
+            this.MenuItemContr.Text = "Контракт";
+            this.MenuItemContr.Click += new System.EventHandler(this.контрактToolStripMenuItem_Click);
+            // 
+            // поставщикToolStripMenuItem
+            // 
+            this.поставщикToolStripMenuItem.Name = "поставщикToolStripMenuItem";
+            this.поставщикToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.поставщикToolStripMenuItem.Text = "Поставщик";
+            this.поставщикToolStripMenuItem.Click += new System.EventHandler(this.поставщикToolStripMenuItem_Click);
             // 
             // kvrToolStripMenuItem
             // 
             this.kvrToolStripMenuItem.Name = "kvrToolStripMenuItem";
-            this.kvrToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kvrToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.kvrToolStripMenuItem.Text = "Код КВР";
             // 
             // fZ44ToolStripMenuItem
             // 
             this.fZ44ToolStripMenuItem.Name = "fZ44ToolStripMenuItem";
-            this.fZ44ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fZ44ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.fZ44ToolStripMenuItem.Text = "Пункт 44ФЗ";
-            // 
-            // поставщикToolStripMenuItem
-            // 
-            this.поставщикToolStripMenuItem.Name = "поставщикToolStripMenuItem";
-            this.поставщикToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.поставщикToolStripMenuItem.Text = "Поставщик";
-            this.поставщикToolStripMenuItem.Click += new System.EventHandler(this.поставщикToolStripMenuItem_Click);
-            // 
-            // MenuItemContr
-            // 
-            this.MenuItemContr.Name = "MenuItemContr";
-            this.MenuItemContr.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemContr.Text = "Контракт";
-            this.MenuItemContr.Click += new System.EventHandler(this.контрактToolStripMenuItem_Click);
             // 
             // изменитьToolStripMenuItem1
             // 
             this.изменитьToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.контрактToolStripMenuItem1,
+            this.menuItemContrChange,
             this.поставщикToolStripMenuItem1,
             this.кодКВРToolStripMenuItem,
             this.пункт44ФЗToolStripMenuItem});
             this.изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
-            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.изменитьToolStripMenuItem1.Text = "Изменить";
             // 
-            // контрактToolStripMenuItem1
+            // menuItemContrChange
             // 
-            this.контрактToolStripMenuItem1.Name = "контрактToolStripMenuItem1";
-            this.контрактToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.контрактToolStripMenuItem1.Text = "Контракт";
+            this.menuItemContrChange.Name = "menuItemContrChange";
+            this.menuItemContrChange.Size = new System.Drawing.Size(180, 22);
+            this.menuItemContrChange.Text = "Контракт";
+            this.menuItemContrChange.Click += new System.EventHandler(this.menuItemContrChange_Click);
             // 
             // поставщикToolStripMenuItem1
             // 
@@ -348,7 +349,7 @@ namespace ContractsV4._0
         private System.Windows.Forms.ToolStripMenuItem поставщикToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItemContr;
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem контрактToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem menuItemContrChange;
         private System.Windows.Forms.ToolStripMenuItem поставщикToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem кодКВРToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пункт44ФЗToolStripMenuItem;

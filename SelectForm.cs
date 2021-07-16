@@ -29,8 +29,11 @@ namespace ContractsV4._0
             sqlConnection = new SqlConnection(connectionString);
 
             await sqlConnection.OpenAsync();
-            if (sqlConnection.State == ConnectionState.Open)
+            toolStripLabel1.Text = "Дебил";
+            if (sqlConnection.State == ConnectionState.Open) {
+                toolStripLabel1.Text = ":)";
                 toolStripLabel1.Visible = true;
+            }
         
             lViewSelect.GridLines = true; // создаю заголовки таблицы
             lViewSelect.FullRowSelect = true;
@@ -54,7 +57,7 @@ namespace ContractsV4._0
             //lViewSelect.MouseClick += new MouseEventHandler(lViewSelect_MouseClick);
         }
 
-        private void lViewSelect_MouseClick(object sender, MouseEventHandler e)
+        private void lViewSelect_MouseClick(object sender, MouseEventHandler e) 
         {
             //if (e.Button = MouseButtons.Right)
             //{
@@ -249,6 +252,12 @@ namespace ContractsV4._0
         {
             InsertForm insertForm = new InsertForm(sqlConnection);
             insertForm.Show();
+        }
+
+        private void menuItemContrChange_Click(object sender, EventArgs e)
+        {
+            UpdateForm updateFormDouble = new UpdateForm(sqlConnection, Convert.ToInt32(lViewSelect.SelectedItems[0].SubItems[0].Text));
+            updateFormDouble.Show();
         }
     }
 }
